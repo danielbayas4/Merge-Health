@@ -1,10 +1,3 @@
-//
-//  Merge_HealthUITests.swift
-//  Merge HealthUITests
-//
-//  Created by Daniel Bayas on 28/1/24.
-//
-
 import XCTest
 
 final class Merge_HealthUITests: XCTestCase {

@@ -1,10 +1,3 @@
-//
-//  Merge_HealthTests.swift
-//  Merge HealthTests
-//
-//  Created by Daniel Bayas on 28/1/24.
-//
-
 import XCTest
 @testable import Merge_Health
 

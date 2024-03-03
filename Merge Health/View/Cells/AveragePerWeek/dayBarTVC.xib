@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="104" id="KGk-i7-Jjw" customClass="dayBarTVC" customModule="Merge_Health" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="369" height="104"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="369" height="104"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HPk-hQ-f1d">
+                        <rect key="frame" x="10" y="53" width="349" height="4"/>
+                    </progressView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="weekDay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8W7-eS-xeg">
+                        <rect key="frame" x="10" y="10" width="349" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="writtenValue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZv-RK-UYr">
+                        <rect key="frame" x="10" y="81" width="65" height="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="HPk-hQ-f1d" firstAttribute="top" secondItem="8W7-eS-xeg" secondAttribute="bottom" constant="22" id="6q3-Lv-rLD"/>
+                    <constraint firstItem="nZv-RK-UYr" firstAttribute="top" secondItem="HPk-hQ-f1d" secondAttribute="bottom" constant="24" id="LrS-5z-r9a"/>
+                    <constraint firstAttribute="trailing" secondItem="8W7-eS-xeg" secondAttribute="trailing" constant="10" id="QOe-EG-kJR"/>
+                    <constraint firstItem="nZv-RK-UYr" firstAttribute="leading" secondItem="HPk-hQ-f1d" secondAttribute="leading" id="S0w-zq-TAf"/>
+                    <constraint firstItem="8W7-eS-xeg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="UJp-1D-pl6"/>
+                    <constraint firstItem="HPk-hQ-f1d" firstAttribute="leading" secondItem="8W7-eS-xeg" secondAttribute="leading" id="adY-mm-sn3"/>
+                    <constraint firstItem="HPk-hQ-f1d" firstAttribute="trailing" secondItem="8W7-eS-xeg" secondAttribute="trailing" id="d1p-SV-uzP"/>
+                    <constraint firstItem="8W7-eS-xeg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="txb-cd-5gT"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="progressView" destination="HPk-hQ-f1d" id="DAy-RW-gb8"/>
+                <outlet property="weekDay" destination="8W7-eS-xeg" id="9rr-tb-oi7"/>
+                <outlet property="writtenValue" destination="nZv-RK-UYr" id="r9Z-6P-txt"/>
+            </connections>
+            <point key="canvasLocation" x="246.56488549618319" y="-5.6338028169014089"/>
+        </tableViewCell>
+    </objects>
+</document>

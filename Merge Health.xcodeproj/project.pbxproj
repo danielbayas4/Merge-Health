@@ -7,16 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78BCF9DA2B7658D000D1DEC6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCF9D92B7658D000D1DEC6 /* ViewController.swift */; };
+		78BCF9DE2B7E885900D1DEC6 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCF9DD2B7E885900D1DEC6 /* ForgotPasswordVC.swift */; };
+		78DCA8EE2B8E4D9100F39227 /* resting_heart_rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DCA8ED2B8E4D9100F39227 /* resting_heart_rate.swift */; };
 		78DD431E2B67048C0067EB4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DD431D2B67048C0067EB4B /* AppDelegate.swift */; };
 		78DD43202B67048C0067EB4B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DD431F2B67048C0067EB4B /* SceneDelegate.swift */; };
-		78DD43222B67048C0067EB4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DD43212B67048C0067EB4B /* ViewController.swift */; };
 		78DD43252B67048C0067EB4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78DD43232B67048C0067EB4B /* Main.storyboard */; };
-		78DD43282B67048C0067EB4B /* Merge_Health.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 78DD43262B67048C0067EB4B /* Merge_Health.xcdatamodeld */; };
 		78DD432A2B67048D0067EB4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78DD43292B67048D0067EB4B /* Assets.xcassets */; };
 		78DD432D2B67048D0067EB4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78DD432B2B67048D0067EB4B /* LaunchScreen.storyboard */; };
 		78DD43382B67048E0067EB4B /* Merge_HealthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DD43372B67048E0067EB4B /* Merge_HealthTests.swift */; };
 		78DD43422B67048E0067EB4B /* Merge_HealthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DD43412B67048E0067EB4B /* Merge_HealthUITests.swift */; };
 		78DD43442B67048E0067EB4B /* Merge_HealthUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DD43432B67048E0067EB4B /* Merge_HealthUITestsLaunchTests.swift */; };
+		78DD43522B670A2D0067EB4B /* health_data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 78DD43502B670A2D0067EB4B /* health_data.xcdatamodeld */; };
+		78E544D02B82AA6300B97DA6 /* dayBarTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E544CE2B82AA6300B97DA6 /* dayBarTVC.swift */; };
+		78E544D12B82AA6300B97DA6 /* dayBarTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78E544CF2B82AA6300B97DA6 /* dayBarTVC.xib */; };
+		78EB59162B93E12E007272DA /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EB59152B93E12E007272DA /* UIColor+Extensions.swift */; };
+		78EE8EE92B7648BB00DC8B84 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EE8EE82B7648BB00DC8B84 /* LoginVC.swift */; };
+		78EE8EEA2B7648BE00DC8B84 /* GeneralDashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EE8EE32B76468700DC8B84 /* GeneralDashboardVC.swift */; };
+		78EE8EEB2B7648C000DC8B84 /* CorrelationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EE8EE22B76463D00DC8B84 /* CorrelationVC.swift */; };
+		78EE8EED2B76491C00DC8B84 /* IndividualMetricVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EE8EEC2B76491C00DC8B84 /* IndividualMetricVC.swift */; };
+		78EE8EEF2B764DC100DC8B84 /* AveragePerWeekVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EE8EEE2B764DC100DC8B84 /* AveragePerWeekVC.swift */; };
+		78EE8EF12B764DE600DC8B84 /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EE8EF02B764DE600DC8B84 /* RegistrationVC.swift */; };
+		78EE8EF32B764EFB00DC8B84 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EE8EF22B764EFB00DC8B84 /* ProfileVC.swift */; };
+		78EE8EF52B764F0E00DC8B84 /* PersonalDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EE8EF42B764F0E00DC8B84 /* PersonalDetailsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,12 +50,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		78BCF9D92B7658D000D1DEC6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		78BCF9DD2B7E885900D1DEC6 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
+		78DCA8ED2B8E4D9100F39227 /* resting_heart_rate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resting_heart_rate.swift; sourceTree = "<group>"; };
 		78DD431A2B67048C0067EB4B /* Merge Health.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Merge Health.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78DD431D2B67048C0067EB4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78DD431F2B67048C0067EB4B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		78DD43212B67048C0067EB4B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		78DD43242B67048C0067EB4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		78DD43272B67048C0067EB4B /* Merge_Health.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Merge_Health.xcdatamodel; sourceTree = "<group>"; };
 		78DD43292B67048D0067EB4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78DD432C2B67048D0067EB4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78DD432E2B67048D0067EB4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +65,19 @@
 		78DD433D2B67048E0067EB4B /* Merge HealthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Merge HealthUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78DD43412B67048E0067EB4B /* Merge_HealthUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Merge_HealthUITests.swift; sourceTree = "<group>"; };
 		78DD43432B67048E0067EB4B /* Merge_HealthUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Merge_HealthUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		78DD43512B670A2D0067EB4B /* health_data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = health_data.xcdatamodel; sourceTree = "<group>"; };
+		78E544CE2B82AA6300B97DA6 /* dayBarTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dayBarTVC.swift; sourceTree = "<group>"; };
+		78E544CF2B82AA6300B97DA6 /* dayBarTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = dayBarTVC.xib; sourceTree = "<group>"; };
+		78EB59152B93E12E007272DA /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		78EE8EE02B75825900DC8B84 /* HealthProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthProfile.swift; sourceTree = "<group>"; };
+		78EE8EE22B76463D00DC8B84 /* CorrelationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrelationVC.swift; sourceTree = "<group>"; };
+		78EE8EE32B76468700DC8B84 /* GeneralDashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralDashboardVC.swift; sourceTree = "<group>"; };
+		78EE8EE82B7648BB00DC8B84 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		78EE8EEC2B76491C00DC8B84 /* IndividualMetricVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualMetricVC.swift; sourceTree = "<group>"; };
+		78EE8EEE2B764DC100DC8B84 /* AveragePerWeekVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AveragePerWeekVC.swift; sourceTree = "<group>"; };
+		78EE8EF02B764DE600DC8B84 /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
+		78EE8EF22B764EFB00DC8B84 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		78EE8EF42B764F0E00DC8B84 /* PersonalDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDetailsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +105,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		78DCA8EC2B8E4D5100F39227 /* Metrics_ */ = {
+			isa = PBXGroup;
+			children = (
+				78DCA8ED2B8E4D9100F39227 /* resting_heart_rate.swift */,
+			);
+			path = Metrics_;
+			sourceTree = "<group>";
+		};
 		78DD43112B67048C0067EB4B = {
 			isa = PBXGroup;
 			children = (
@@ -101,14 +136,13 @@
 		78DD431C2B67048C0067EB4B /* Merge Health */ = {
 			isa = PBXGroup;
 			children = (
-				78DD431D2B67048C0067EB4B /* AppDelegate.swift */,
-				78DD431F2B67048C0067EB4B /* SceneDelegate.swift */,
-				78DD43212B67048C0067EB4B /* ViewController.swift */,
-				78DD43232B67048C0067EB4B /* Main.storyboard */,
-				78DD43292B67048D0067EB4B /* Assets.xcassets */,
-				78DD432B2B67048D0067EB4B /* LaunchScreen.storyboard */,
+				78EE8EDE2B7580A200DC8B84 /* Model */,
+				78EE8EDB2B757FC500DC8B84 /* App Delegate */,
+				78EE8EDA2B757FBB00DC8B84 /* Controller (View) */,
+				78EE8ED92B757FB400DC8B84 /* View */,
+				78EE8ED82B757FA700DC8B84 /* Resources */,
 				78DD432E2B67048D0067EB4B /* Info.plist */,
-				78DD43262B67048C0067EB4B /* Merge_Health.xcdatamodeld */,
+				78EB59152B93E12E007272DA /* UIColor+Extensions.swift */,
 			);
 			path = "Merge Health";
 			sourceTree = "<group>";
@@ -128,6 +162,93 @@
 				78DD43432B67048E0067EB4B /* Merge_HealthUITestsLaunchTests.swift */,
 			);
 			path = "Merge HealthUITests";
+			sourceTree = "<group>";
+		};
+		78E544C92B82A9AD00B97DA6 /* AveragePerWeek */ = {
+			isa = PBXGroup;
+			children = (
+				78E544CE2B82AA6300B97DA6 /* dayBarTVC.swift */,
+				78E544CF2B82AA6300B97DA6 /* dayBarTVC.xib */,
+			);
+			path = AveragePerWeek;
+			sourceTree = "<group>";
+		};
+		78EB591A2B949BCF007272DA /* IndividualMetricGD */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IndividualMetricGD;
+			sourceTree = "<group>";
+		};
+		78EE8ED82B757FA700DC8B84 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				78DD43292B67048D0067EB4B /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		78EE8ED92B757FB400DC8B84 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				78EE8EDD2B757FF700DC8B84 /* Storyboard */,
+				78EE8EDC2B757FF100DC8B84 /* Cells */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		78EE8EDA2B757FBB00DC8B84 /* Controller (View) */ = {
+			isa = PBXGroup;
+			children = (
+				78DCA8EC2B8E4D5100F39227 /* Metrics_ */,
+				78EE8EE82B7648BB00DC8B84 /* LoginVC.swift */,
+				78EE8EE32B76468700DC8B84 /* GeneralDashboardVC.swift */,
+				78EE8EEC2B76491C00DC8B84 /* IndividualMetricVC.swift */,
+				78EE8EE22B76463D00DC8B84 /* CorrelationVC.swift */,
+				78EE8EEE2B764DC100DC8B84 /* AveragePerWeekVC.swift */,
+				78EE8EF02B764DE600DC8B84 /* RegistrationVC.swift */,
+				78EE8EF22B764EFB00DC8B84 /* ProfileVC.swift */,
+				78EE8EF42B764F0E00DC8B84 /* PersonalDetailsVC.swift */,
+				78BCF9D92B7658D000D1DEC6 /* ViewController.swift */,
+				78BCF9DD2B7E885900D1DEC6 /* ForgotPasswordVC.swift */,
+			);
+			path = "Controller (View)";
+			sourceTree = "<group>";
+		};
+		78EE8EDB2B757FC500DC8B84 /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				78DD431F2B67048C0067EB4B /* SceneDelegate.swift */,
+				78DD431D2B67048C0067EB4B /* AppDelegate.swift */,
+			);
+			path = "App Delegate";
+			sourceTree = "<group>";
+		};
+		78EE8EDC2B757FF100DC8B84 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				78EB591A2B949BCF007272DA /* IndividualMetricGD */,
+				78E544C92B82A9AD00B97DA6 /* AveragePerWeek */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		78EE8EDD2B757FF700DC8B84 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				78DD43232B67048C0067EB4B /* Main.storyboard */,
+				78DD432B2B67048D0067EB4B /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		78EE8EDE2B7580A200DC8B84 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				78DD43502B670A2D0067EB4B /* health_data.xcdatamodeld */,
+				78EE8EE02B75825900DC8B84 /* HealthProfile.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +357,7 @@
 			files = (
 				78DD432D2B67048D0067EB4B /* LaunchScreen.storyboard in Resources */,
 				78DD432A2B67048D0067EB4B /* Assets.xcassets in Resources */,
+				78E544D12B82AA6300B97DA6 /* dayBarTVC.xib in Resources */,
 				78DD43252B67048C0067EB4B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,10 +383,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78DD43222B67048C0067EB4B /* ViewController.swift in Sources */,
+				78EE8EF32B764EFB00DC8B84 /* ProfileVC.swift in Sources */,
+				78EE8EEF2B764DC100DC8B84 /* AveragePerWeekVC.swift in Sources */,
+				78EE8EF52B764F0E00DC8B84 /* PersonalDetailsVC.swift in Sources */,
 				78DD431E2B67048C0067EB4B /* AppDelegate.swift in Sources */,
-				78DD43282B67048C0067EB4B /* Merge_Health.xcdatamodeld in Sources */,
+				78E544D02B82AA6300B97DA6 /* dayBarTVC.swift in Sources */,
 				78DD43202B67048C0067EB4B /* SceneDelegate.swift in Sources */,
+				78DCA8EE2B8E4D9100F39227 /* resting_heart_rate.swift in Sources */,
+				78EE8EEA2B7648BE00DC8B84 /* GeneralDashboardVC.swift in Sources */,
+				78BCF9DA2B7658D000D1DEC6 /* ViewController.swift in Sources */,
+				78EE8EF12B764DE600DC8B84 /* RegistrationVC.swift in Sources */,
+				78BCF9DE2B7E885900D1DEC6 /* ForgotPasswordVC.swift in Sources */,
+				78EB59162B93E12E007272DA /* UIColor+Extensions.swift in Sources */,
+				78EE8EEB2B7648C000DC8B84 /* CorrelationVC.swift in Sources */,
+				78EE8EED2B76491C00DC8B84 /* IndividualMetricVC.swift in Sources */,
+				78EE8EE92B7648BB00DC8B84 /* LoginVC.swift in Sources */,
+				78DD43522B670A2D0067EB4B /* health_data.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,13 +742,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		78DD43262B67048C0067EB4B /* Merge_Health.xcdatamodeld */ = {
+		78DD43502B670A2D0067EB4B /* health_data.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				78DD43272B67048C0067EB4B /* Merge_Health.xcdatamodel */,
+				78DD43512B670A2D0067EB4B /* health_data.xcdatamodel */,
 			);
-			currentVersion = 78DD43272B67048C0067EB4B /* Merge_Health.xcdatamodel */;
-			path = Merge_Health.xcdatamodeld;
+			currentVersion = 78DD43512B670A2D0067EB4B /* health_data.xcdatamodel */;
+			path = health_data.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -1,9 +1,6 @@
-//
+
 //  SceneDelegate.swift
 //  Merge Health
-//
-//  Created by Daniel Bayas on 28/1/24.
-//
 
 import UIKit
 
