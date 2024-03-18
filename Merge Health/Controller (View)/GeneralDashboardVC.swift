@@ -1,4 +1,5 @@
 import UIKit
+import HealthKit
 
 class GeneralDashboardVC: UIViewController {
     
@@ -21,6 +22,13 @@ class GeneralDashboardVC: UIViewController {
     
     func initialUI(){
         view.backgroundColor = UIColor(hex: "F0ECE5")
+        restingHeartRateButton.tintColor = UIColor(hex: "161A30")
+        heartRateVariabilityButton.tintColor = UIColor(hex: "161A30")
+        walkingHeartRateButton.tintColor = UIColor(hex: "161A30")
+        stepsButton.tintColor = UIColor(hex: "161A30")
+        workoutTimeButton.tintColor = UIColor(hex: "161A30")
+        deepSleep.tintColor = UIColor(hex: "161A30")
+        REMSleepButton.tintColor = UIColor(hex: "161A30")
     }
     
     @IBAction func restingHeartRate(_ sender: Any) {

@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01F4FC0A89FE90BBA0D1AFEA /* Pods_Merge_Health_Merge_HealthUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D621A294284288A2CFEC28B6 /* Pods_Merge_Health_Merge_HealthUITests.framework */; };
+		214624B62BEFF18CF2FAAA09 /* Pods_Merge_Health.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA3BD48992E8EE2F3EC2D1B /* Pods_Merge_Health.framework */; };
+		780363BF2BA636F0006C2CDB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 780363BE2BA636F0006C2CDB /* GoogleService-Info.plist */; };
+		7813141D2BA0882F0037F114 /* RestingHeartRate.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7813141C2BA0882F0037F114 /* RestingHeartRate.xib */; };
+		7813141E2BA0882F0037F114 /* RestingHeartRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7813141B2BA0882F0037F114 /* RestingHeartRate.swift */; };
+		781314212BA46E9D0037F114 /* StepsTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 781314202BA46E9C0037F114 /* StepsTVC.xib */; };
+		781314222BA46E9D0037F114 /* StepsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7813141F2BA46E9C0037F114 /* StepsTVC.swift */; };
+		7834C8422B9CE78400E1EDE2 /* TodayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7834C8412B9CE78400E1EDE2 /* TodayVC.swift */; };
+		7834C8452B9FA9CE00E1EDE2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7834C8442B9FA9CE00E1EDE2 /* User.swift */; };
+		78B1F6B82B9BB29500AA1410 /* PermissionHealthKitSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B1F6B72B9BB29500AA1410 /* PermissionHealthKitSetup.swift */; };
+		78B1F6BA2B9BB2D100AA1410 /* UserDataInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B1F6B92B9BB2D100AA1410 /* UserDataInformation.swift */; };
 		78BCF9DA2B7658D000D1DEC6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCF9D92B7658D000D1DEC6 /* ViewController.swift */; };
 		78BCF9DE2B7E885900D1DEC6 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCF9DD2B7E885900D1DEC6 /* ForgotPasswordVC.swift */; };
 		78DCA8EE2B8E4D9100F39227 /* resting_heart_rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DCA8ED2B8E4D9100F39227 /* resting_heart_rate.swift */; };
@@ -30,6 +41,7 @@
 		78EE8EF12B764DE600DC8B84 /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EE8EF02B764DE600DC8B84 /* RegistrationVC.swift */; };
 		78EE8EF32B764EFB00DC8B84 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EE8EF22B764EFB00DC8B84 /* ProfileVC.swift */; };
 		78EE8EF52B764F0E00DC8B84 /* PersonalDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EE8EF42B764F0E00DC8B84 /* PersonalDetailsVC.swift */; };
+		D10584BAC238F493F1D7434D /* Pods_Merge_HealthTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CADF2A117A307F3A5D3FB509 /* Pods_Merge_HealthTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +62,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1296CB36A7668E91E3B33E2B /* Pods-Merge HealthTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Merge HealthTests.release.xcconfig"; path = "Target Support Files/Pods-Merge HealthTests/Pods-Merge HealthTests.release.xcconfig"; sourceTree = "<group>"; };
+		35C5591F2F8545B4D16DF8B8 /* Pods-Merge Health.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Merge Health.release.xcconfig"; path = "Target Support Files/Pods-Merge Health/Pods-Merge Health.release.xcconfig"; sourceTree = "<group>"; };
+		492132BBC61386329B657758 /* Pods-Merge Health-Merge HealthUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Merge Health-Merge HealthUITests.release.xcconfig"; path = "Target Support Files/Pods-Merge Health-Merge HealthUITests/Pods-Merge Health-Merge HealthUITests.release.xcconfig"; sourceTree = "<group>"; };
+		780363BE2BA636F0006C2CDB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7813141B2BA0882F0037F114 /* RestingHeartRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestingHeartRate.swift; sourceTree = "<group>"; };
+		7813141C2BA0882F0037F114 /* RestingHeartRate.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestingHeartRate.xib; sourceTree = "<group>"; };
+		7813141F2BA46E9C0037F114 /* StepsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsTVC.swift; sourceTree = "<group>"; };
+		781314202BA46E9C0037F114 /* StepsTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StepsTVC.xib; sourceTree = "<group>"; };
+		7834C8412B9CE78400E1EDE2 /* TodayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayVC.swift; sourceTree = "<group>"; };
+		7834C8432B9CE7DE00E1EDE2 /* Testing.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Testing.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		7834C8442B9FA9CE00E1EDE2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		783DB96C2B9BA8BB0075D120 /* Merge Health.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Merge Health.entitlements"; sourceTree = "<group>"; };
+		78B1F6B12B9BB00C00AA1410 /* Python3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python3.framework; path = Library/Frameworks/Python3.framework; sourceTree = DEVELOPER_DIR; };
+		78B1F6B72B9BB29500AA1410 /* PermissionHealthKitSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionHealthKitSetup.swift; sourceTree = "<group>"; };
+		78B1F6B92B9BB2D100AA1410 /* UserDataInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataInformation.swift; sourceTree = "<group>"; };
 		78BCF9D92B7658D000D1DEC6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		78BCF9DD2B7E885900D1DEC6 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		78DCA8ED2B8E4D9100F39227 /* resting_heart_rate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resting_heart_rate.swift; sourceTree = "<group>"; };
@@ -78,6 +105,12 @@
 		78EE8EF02B764DE600DC8B84 /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
 		78EE8EF22B764EFB00DC8B84 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		78EE8EF42B764F0E00DC8B84 /* PersonalDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDetailsVC.swift; sourceTree = "<group>"; };
+		BCA3BD48992E8EE2F3EC2D1B /* Pods_Merge_Health.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Merge_Health.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF60A98AFE33C86805E5F75E /* Pods-Merge Health.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Merge Health.debug.xcconfig"; path = "Target Support Files/Pods-Merge Health/Pods-Merge Health.debug.xcconfig"; sourceTree = "<group>"; };
+		CADF2A117A307F3A5D3FB509 /* Pods_Merge_HealthTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Merge_HealthTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5C9C4FB4E1475AC4EDE5E9D /* Pods-Merge Health-Merge HealthUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Merge Health-Merge HealthUITests.debug.xcconfig"; path = "Target Support Files/Pods-Merge Health-Merge HealthUITests/Pods-Merge Health-Merge HealthUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D621A294284288A2CFEC28B6 /* Pods_Merge_Health_Merge_HealthUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Merge_Health_Merge_HealthUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE09D02B00122826994A4CA2 /* Pods-Merge HealthTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Merge HealthTests.debug.xcconfig"; path = "Target Support Files/Pods-Merge HealthTests/Pods-Merge HealthTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				214624B62BEFF18CF2FAAA09 /* Pods_Merge_Health.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D10584BAC238F493F1D7434D /* Pods_Merge_HealthTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,12 +134,42 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01F4FC0A89FE90BBA0D1AFEA /* Pods_Merge_Health_Merge_HealthUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7813141A2BA0876A0037F114 /* TodayVC */ = {
+			isa = PBXGroup;
+			children = (
+				7813141B2BA0882F0037F114 /* RestingHeartRate.swift */,
+				7813141C2BA0882F0037F114 /* RestingHeartRate.xib */,
+				7813141F2BA46E9C0037F114 /* StepsTVC.swift */,
+				781314202BA46E9C0037F114 /* StepsTVC.xib */,
+			);
+			path = TodayVC;
+			sourceTree = "<group>";
+		};
+		786D4A562B94B3970087D95D /* GeneralDashboard_ */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GeneralDashboard_;
+			sourceTree = "<group>";
+		};
+		78B1F6B02B9BB00B00AA1410 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				78B1F6B12B9BB00C00AA1410 /* Python3.framework */,
+				BCA3BD48992E8EE2F3EC2D1B /* Pods_Merge_Health.framework */,
+				D621A294284288A2CFEC28B6 /* Pods_Merge_Health_Merge_HealthUITests.framework */,
+				CADF2A117A307F3A5D3FB509 /* Pods_Merge_HealthTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		78DCA8EC2B8E4D5100F39227 /* Metrics_ */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,10 +181,13 @@
 		78DD43112B67048C0067EB4B = {
 			isa = PBXGroup;
 			children = (
+				7834C8432B9CE7DE00E1EDE2 /* Testing.playground */,
 				78DD431C2B67048C0067EB4B /* Merge Health */,
 				78DD43362B67048E0067EB4B /* Merge HealthTests */,
 				78DD43402B67048E0067EB4B /* Merge HealthUITests */,
 				78DD431B2B67048C0067EB4B /* Products */,
+				78B1F6B02B9BB00B00AA1410 /* Frameworks */,
+				EF2A2E16D25BF9B66868114D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,13 +204,17 @@
 		78DD431C2B67048C0067EB4B /* Merge Health */ = {
 			isa = PBXGroup;
 			children = (
+				783DB96C2B9BA8BB0075D120 /* Merge Health.entitlements */,
 				78EE8EDE2B7580A200DC8B84 /* Model */,
 				78EE8EDB2B757FC500DC8B84 /* App Delegate */,
 				78EE8EDA2B757FBB00DC8B84 /* Controller (View) */,
 				78EE8ED92B757FB400DC8B84 /* View */,
 				78EE8ED82B757FA700DC8B84 /* Resources */,
 				78DD432E2B67048D0067EB4B /* Info.plist */,
+				780363BE2BA636F0006C2CDB /* GoogleService-Info.plist */,
 				78EB59152B93E12E007272DA /* UIColor+Extensions.swift */,
+				78B1F6B72B9BB29500AA1410 /* PermissionHealthKitSetup.swift */,
+				78B1F6B92B9BB2D100AA1410 /* UserDataInformation.swift */,
 			);
 			path = "Merge Health";
 			sourceTree = "<group>";
@@ -171,13 +243,6 @@
 				78E544CF2B82AA6300B97DA6 /* dayBarTVC.xib */,
 			);
 			path = AveragePerWeek;
-			sourceTree = "<group>";
-		};
-		78EB591A2B949BCF007272DA /* IndividualMetricGD */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = IndividualMetricGD;
 			sourceTree = "<group>";
 		};
 		78EE8ED82B757FA700DC8B84 /* Resources */ = {
@@ -211,6 +276,7 @@
 				78EE8EF42B764F0E00DC8B84 /* PersonalDetailsVC.swift */,
 				78BCF9D92B7658D000D1DEC6 /* ViewController.swift */,
 				78BCF9DD2B7E885900D1DEC6 /* ForgotPasswordVC.swift */,
+				7834C8412B9CE78400E1EDE2 /* TodayVC.swift */,
 			);
 			path = "Controller (View)";
 			sourceTree = "<group>";
@@ -227,7 +293,8 @@
 		78EE8EDC2B757FF100DC8B84 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				78EB591A2B949BCF007272DA /* IndividualMetricGD */,
+				7813141A2BA0876A0037F114 /* TodayVC */,
+				786D4A562B94B3970087D95D /* GeneralDashboard_ */,
 				78E544C92B82A9AD00B97DA6 /* AveragePerWeek */,
 			);
 			path = Cells;
@@ -247,8 +314,23 @@
 			children = (
 				78DD43502B670A2D0067EB4B /* health_data.xcdatamodeld */,
 				78EE8EE02B75825900DC8B84 /* HealthProfile.swift */,
+				7834C8442B9FA9CE00E1EDE2 /* User.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		EF2A2E16D25BF9B66868114D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BF60A98AFE33C86805E5F75E /* Pods-Merge Health.debug.xcconfig */,
+				35C5591F2F8545B4D16DF8B8 /* Pods-Merge Health.release.xcconfig */,
+				D5C9C4FB4E1475AC4EDE5E9D /* Pods-Merge Health-Merge HealthUITests.debug.xcconfig */,
+				492132BBC61386329B657758 /* Pods-Merge Health-Merge HealthUITests.release.xcconfig */,
+				DE09D02B00122826994A4CA2 /* Pods-Merge HealthTests.debug.xcconfig */,
+				1296CB36A7668E91E3B33E2B /* Pods-Merge HealthTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +340,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 78DD43472B67048E0067EB4B /* Build configuration list for PBXNativeTarget "Merge Health" */;
 			buildPhases = (
+				28FF35699DD8DE31DDC161C6 /* [CP] Check Pods Manifest.lock */,
 				78DD43162B67048C0067EB4B /* Sources */,
 				78DD43172B67048C0067EB4B /* Frameworks */,
 				78DD43182B67048C0067EB4B /* Resources */,
+				1DBE1683A266804BA05FB7D8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -275,6 +359,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 78DD434A2B67048E0067EB4B /* Build configuration list for PBXNativeTarget "Merge HealthTests" */;
 			buildPhases = (
+				ABAD6151AD2C2DCFD2076FC7 /* [CP] Check Pods Manifest.lock */,
 				78DD432F2B67048E0067EB4B /* Sources */,
 				78DD43302B67048E0067EB4B /* Frameworks */,
 				78DD43312B67048E0067EB4B /* Resources */,
@@ -293,9 +378,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 78DD434D2B67048E0067EB4B /* Build configuration list for PBXNativeTarget "Merge HealthUITests" */;
 			buildPhases = (
+				0F3C69F7121D188C0A0059B9 /* [CP] Check Pods Manifest.lock */,
 				78DD43392B67048E0067EB4B /* Sources */,
 				78DD433A2B67048E0067EB4B /* Frameworks */,
 				78DD433B2B67048E0067EB4B /* Resources */,
+				9A4BE38D212FDE945511D535 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -358,7 +445,10 @@
 				78DD432D2B67048D0067EB4B /* LaunchScreen.storyboard in Resources */,
 				78DD432A2B67048D0067EB4B /* Assets.xcassets in Resources */,
 				78E544D12B82AA6300B97DA6 /* dayBarTVC.xib in Resources */,
+				781314212BA46E9D0037F114 /* StepsTVC.xib in Resources */,
+				7813141D2BA0882F0037F114 /* RestingHeartRate.xib in Resources */,
 				78DD43252B67048C0067EB4B /* Main.storyboard in Resources */,
+				780363BF2BA636F0006C2CDB /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +468,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0F3C69F7121D188C0A0059B9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Merge Health-Merge HealthUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1DBE1683A266804BA05FB7D8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Merge Health/Pods-Merge Health-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Merge Health/Pods-Merge Health-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Merge Health/Pods-Merge Health-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		28FF35699DD8DE31DDC161C6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Merge Health-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A4BE38D212FDE945511D535 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Merge Health-Merge HealthUITests/Pods-Merge Health-Merge HealthUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Merge Health-Merge HealthUITests/Pods-Merge Health-Merge HealthUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Merge Health-Merge HealthUITests/Pods-Merge Health-Merge HealthUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ABAD6151AD2C2DCFD2076FC7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Merge HealthTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		78DD43162B67048C0067EB4B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -386,19 +579,25 @@
 				78EE8EF32B764EFB00DC8B84 /* ProfileVC.swift in Sources */,
 				78EE8EEF2B764DC100DC8B84 /* AveragePerWeekVC.swift in Sources */,
 				78EE8EF52B764F0E00DC8B84 /* PersonalDetailsVC.swift in Sources */,
+				78B1F6BA2B9BB2D100AA1410 /* UserDataInformation.swift in Sources */,
 				78DD431E2B67048C0067EB4B /* AppDelegate.swift in Sources */,
 				78E544D02B82AA6300B97DA6 /* dayBarTVC.swift in Sources */,
+				7813141E2BA0882F0037F114 /* RestingHeartRate.swift in Sources */,
 				78DD43202B67048C0067EB4B /* SceneDelegate.swift in Sources */,
 				78DCA8EE2B8E4D9100F39227 /* resting_heart_rate.swift in Sources */,
+				7834C8452B9FA9CE00E1EDE2 /* User.swift in Sources */,
 				78EE8EEA2B7648BE00DC8B84 /* GeneralDashboardVC.swift in Sources */,
 				78BCF9DA2B7658D000D1DEC6 /* ViewController.swift in Sources */,
+				78B1F6B82B9BB29500AA1410 /* PermissionHealthKitSetup.swift in Sources */,
 				78EE8EF12B764DE600DC8B84 /* RegistrationVC.swift in Sources */,
 				78BCF9DE2B7E885900D1DEC6 /* ForgotPasswordVC.swift in Sources */,
 				78EB59162B93E12E007272DA /* UIColor+Extensions.swift in Sources */,
 				78EE8EEB2B7648C000DC8B84 /* CorrelationVC.swift in Sources */,
 				78EE8EED2B76491C00DC8B84 /* IndividualMetricVC.swift in Sources */,
+				7834C8422B9CE78400E1EDE2 /* TodayVC.swift in Sources */,
 				78EE8EE92B7648BB00DC8B84 /* LoginVC.swift in Sources */,
 				78DD43522B670A2D0067EB4B /* health_data.xcdatamodeld in Sources */,
+				781314222BA46E9D0037F114 /* StepsTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,14 +769,17 @@
 		};
 		78DD43482B67048E0067EB4B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF60A98AFE33C86805E5F75E /* Pods-Merge Health.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Merge Health/Merge Health.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6XDAT75S8N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Merge Health/Info.plist";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Multiple data types are required to acess graph them and process them to give insights";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -588,7 +790,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "swift.Merge-Health";
+				PRODUCT_BUNDLE_IDENTIFIER = com.DaBa.mergeHealth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -598,14 +800,17 @@
 		};
 		78DD43492B67048E0067EB4B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35C5591F2F8545B4D16DF8B8 /* Pods-Merge Health.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Merge Health/Merge Health.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6XDAT75S8N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Merge Health/Info.plist";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Multiple data types are required to acess graph them and process them to give insights";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -616,7 +821,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "swift.Merge-Health";
+				PRODUCT_BUNDLE_IDENTIFIER = com.DaBa.mergeHealth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -626,6 +831,7 @@
 		};
 		78DD434B2B67048E0067EB4B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE09D02B00122826994A4CA2 /* Pods-Merge HealthTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -646,6 +852,7 @@
 		};
 		78DD434C2B67048E0067EB4B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1296CB36A7668E91E3B33E2B /* Pods-Merge HealthTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -666,6 +873,7 @@
 		};
 		78DD434E2B67048E0067EB4B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5C9C4FB4E1475AC4EDE5E9D /* Pods-Merge Health-Merge HealthUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -684,6 +892,7 @@
 		};
 		78DD434F2B67048E0067EB4B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 492132BBC61386329B657758 /* Pods-Merge Health-Merge HealthUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+
+class UserDataInformation {
+    var restingHeartRate: Int?
+    var heartRateVariability: Int?
+    
+}

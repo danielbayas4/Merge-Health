@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="70E-1J-Twq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="70E-1J-Twq">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -460,6 +460,11 @@
                     <navigationItem key="navigationItem" title="Individual" id="Yjp-Qa-EbA"/>
                     <connections>
                         <outlet property="averagePerWeekButton" destination="29L-y7-ydX" id="u0f-JX-OZU"/>
+                        <outlet property="custom" destination="gFY-8y-uXA" id="2rG-6n-fxJ"/>
+                        <outlet property="daily" destination="diO-Gv-A3q" id="o5j-O5-c5K"/>
+                        <outlet property="monthly" destination="Zcf-xw-iYY" id="YUM-Iz-JEO"/>
+                        <outlet property="weekly" destination="aS7-ke-L0O" id="gqT-Q9-bTe"/>
+                        <outlet property="yearly" destination="TnE-yT-UbX" id="hhW-QL-eLf"/>
                         <segue destination="iKv-lD-934" kind="show" identifier="toAveragePerWeek" id="J0n-LB-bvL"/>
                     </connections>
                 </viewController>
@@ -538,6 +543,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fe6-Ki-3dr"/>
+                    <connections>
+                        <outlet property="registerButton" destination="Y9A-ZT-e76" id="yzo-Gc-P7H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OtK-Mf-n4H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -557,11 +565,12 @@
                         <segue destination="gfm-cJ-ond" kind="relationship" relationship="viewControllers" id="hnj-ht-ICO"/>
                         <segue destination="Fwp-3j-cXS" kind="relationship" relationship="viewControllers" id="djN-Sr-oVr"/>
                         <segue destination="bem-VS-sGy" kind="relationship" relationship="viewControllers" id="nWe-iE-Yk0"/>
+                        <segue destination="aVQ-qF-60Q" kind="relationship" relationship="viewControllers" id="9P8-QX-oLw"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ca9-EH-ixA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="544.27480916030527" y="-254.22535211267606"/>
+            <point key="canvasLocation" x="625" y="-254"/>
         </scene>
         <!--Forgot PasswordVC-->
         <scene sceneID="aak-oc-QNX">
@@ -609,6 +618,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Apple Health"/>
+                                <connections>
+                                    <action selector="appleHealthAction:" destination="Wd0-zD-cl0" eventType="touchUpInside" id="xQj-nx-ymS"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpw-Tu-Lbi">
                                 <rect key="frame" x="30" y="684" width="29" height="21"/>
@@ -680,6 +692,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="Zmk-Q5-iOe"/>
                     <connections>
+                        <outlet property="appleHealthButton" destination="nnP-Zf-D1i" id="hvP-cQ-wrG"/>
+                        <outlet property="polarButton" destination="lXd-3Y-XZg" id="5aj-47-tcL"/>
                         <outlet property="toPersonalDetailsButton" destination="l1h-OH-KBh" id="qpS-TG-5R8"/>
                         <segue destination="u8B-Qh-YG3" kind="show" identifier="toPersonalDetails" id="d7a-Yz-SDQ"/>
                     </connections>
@@ -696,17 +710,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qf0-dG-RLR">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Tomas" borderStyle="roundedRect" placeholder="First name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qf0-dG-RLR">
                                 <rect key="frame" x="30" y="143" width="333" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BeE-zz-W3d">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Alfaro" borderStyle="roundedRect" placeholder="Last name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BeE-zz-W3d">
                                 <rect key="frame" x="30" y="217" width="333" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UCZ-pZ-GgS">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="tomas.alfaro@gmail.com" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UCZ-pZ-GgS">
                                 <rect key="frame" x="30" y="291" width="333" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -751,10 +765,50 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Personal details" id="1Qx-Ly-3vV"/>
+                    <connections>
+                        <outlet property="eliminateAccountButton" destination="xFq-4k-YvK" id="kSB-tM-u2s"/>
+                        <outlet property="logOutButton" destination="Ppi-uN-t3r" id="eaa-Hz-0yN"/>
+                        <outlet property="saveChanges" destination="Mwp-xm-XXr" id="PI6-XV-qip"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fEq-dm-dAs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4367.1755725190842" y="538.73239436619724"/>
+        </scene>
+        <!--Today-->
+        <scene sceneID="xj7-St-hzn">
+            <objects>
+                <viewController id="aVQ-qF-60Q" customClass="TodayVC" customModule="Merge_Health" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ewp-Fl-ru7">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jsY-fK-jNK">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="793"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="aVQ-qF-60Q" id="ajC-Qm-HZa"/>
+                                    <outlet property="delegate" destination="aVQ-qF-60Q" id="WFe-Wa-pyd"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6mG-v6-WXi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6mG-v6-WXi" firstAttribute="trailing" secondItem="jsY-fK-jNK" secondAttribute="trailing" id="aCy-gc-MVK"/>
+                            <constraint firstItem="6mG-v6-WXi" firstAttribute="bottom" secondItem="jsY-fK-jNK" secondAttribute="bottom" id="h8f-HN-Byd"/>
+                            <constraint firstItem="jsY-fK-jNK" firstAttribute="top" secondItem="6mG-v6-WXi" secondAttribute="top" id="kII-vD-A49"/>
+                            <constraint firstItem="jsY-fK-jNK" firstAttribute="leading" secondItem="6mG-v6-WXi" secondAttribute="leading" id="leR-TW-bLM"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Today" id="A9G-cD-hcU"/>
+                    <connections>
+                        <outlet property="tableView" destination="jsY-fK-jNK" id="gAR-Sx-Bfi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oXn-me-IGr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="423.66412213740455" y="-1154.2253521126761"/>
         </scene>
         <!--General Dashboard-->
         <scene sceneID="pvj-lJ-iNX">

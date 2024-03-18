@@ -1,0 +1,6 @@
+framework module Pods_Merge_Health {
+  umbrella header "Pods-Merge Health-umbrella.h"
+
+  export *
+  module * { export * }
+}

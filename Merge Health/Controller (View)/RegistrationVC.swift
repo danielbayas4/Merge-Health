@@ -1,16 +1,18 @@
+
+
 import UIKit
 
 class RegistrationVC: UIViewController {
-
+    
+    
+    @IBOutlet var registerButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initialUI()
     }
-    
-    func initialUI(){
-        view.backgroundColor = UIColor(hex: "F0ECE5")
-        navigationController?.navigationBar.tintColor = UIColor(hex:"161A30")
         
-    }
-
+        func initialUI(){
+            registerButton.tintColor = UIColor(hex: "161A30")
+        }
 }

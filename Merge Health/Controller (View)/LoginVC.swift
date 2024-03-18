@@ -24,8 +24,8 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         initialUI()
         
+        
     }
-    
     
     
     func initialUI(){
@@ -41,7 +41,6 @@ class LoginVC: UIViewController {
         
         loginButton.tintColor = UIColor(hex: "161A30")
         
-    
         
         //Create the string with the underline
         let registerButtonString = NSMutableAttributedString(string: "Register", attributes: [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue])
@@ -52,7 +51,6 @@ class LoginVC: UIViewController {
         let forgotPasswordString = NSMutableAttributedString(string: "Forgot the password?", attributes: [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue])
         
         forgotPasswordButton.setAttributedTitle(forgotPasswordString, for: .normal)
-        
         
         
     }

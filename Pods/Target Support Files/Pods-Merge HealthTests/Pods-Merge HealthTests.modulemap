@@ -1,0 +1,6 @@
+framework module Pods_Merge_HealthTests {
+  umbrella header "Pods-Merge HealthTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
