@@ -10,6 +10,9 @@ target 'Merge Health' do
 
   pod 'CLTypingLabel', '~> 0.4.0'
   
+  pod 'FirebaseFirestore'
+  pod 'FirebaseAuth'
+  
   
   target 'Merge HealthTests' do
     inherit! :search_paths

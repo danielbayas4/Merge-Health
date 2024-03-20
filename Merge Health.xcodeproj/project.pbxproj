@@ -16,6 +16,9 @@
 		781314222BA46E9D0037F114 /* StepsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7813141F2BA46E9C0037F114 /* StepsTVC.swift */; };
 		7834C8422B9CE78400E1EDE2 /* TodayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7834C8412B9CE78400E1EDE2 /* TodayVC.swift */; };
 		7834C8452B9FA9CE00E1EDE2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7834C8442B9FA9CE00E1EDE2 /* User.swift */; };
+		7864BD172BAB5C09005D48CB /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7864BD162BAB5C09005D48CB /* ProfileVC.swift */; };
+		7864BD192BAB5E10005D48CB /* IndividualMetricVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7864BD182BAB5E10005D48CB /* IndividualMetricVC.swift */; };
+		7864BD1B2BAB5E36005D48CB /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7864BD1A2BAB5E36005D48CB /* LoginVC.swift */; };
 		78B1F6B82B9BB29500AA1410 /* PermissionHealthKitSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B1F6B72B9BB29500AA1410 /* PermissionHealthKitSetup.swift */; };
 		78B1F6BA2B9BB2D100AA1410 /* UserDataInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B1F6B92B9BB2D100AA1410 /* UserDataInformation.swift */; };
 		78BCF9DA2B7658D000D1DEC6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCF9D92B7658D000D1DEC6 /* ViewController.swift */; };
@@ -33,13 +36,10 @@
 		78E544D02B82AA6300B97DA6 /* dayBarTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E544CE2B82AA6300B97DA6 /* dayBarTVC.swift */; };
 		78E544D12B82AA6300B97DA6 /* dayBarTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78E544CF2B82AA6300B97DA6 /* dayBarTVC.xib */; };
 		78EB59162B93E12E007272DA /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EB59152B93E12E007272DA /* UIColor+Extensions.swift */; };
-		78EE8EE92B7648BB00DC8B84 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EE8EE82B7648BB00DC8B84 /* LoginVC.swift */; };
 		78EE8EEA2B7648BE00DC8B84 /* GeneralDashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EE8EE32B76468700DC8B84 /* GeneralDashboardVC.swift */; };
 		78EE8EEB2B7648C000DC8B84 /* CorrelationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EE8EE22B76463D00DC8B84 /* CorrelationVC.swift */; };
-		78EE8EED2B76491C00DC8B84 /* IndividualMetricVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EE8EEC2B76491C00DC8B84 /* IndividualMetricVC.swift */; };
 		78EE8EEF2B764DC100DC8B84 /* AveragePerWeekVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EE8EEE2B764DC100DC8B84 /* AveragePerWeekVC.swift */; };
 		78EE8EF12B764DE600DC8B84 /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EE8EF02B764DE600DC8B84 /* RegistrationVC.swift */; };
-		78EE8EF32B764EFB00DC8B84 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EE8EF22B764EFB00DC8B84 /* ProfileVC.swift */; };
 		78EE8EF52B764F0E00DC8B84 /* PersonalDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EE8EF42B764F0E00DC8B84 /* PersonalDetailsVC.swift */; };
 		D10584BAC238F493F1D7434D /* Pods_Merge_HealthTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CADF2A117A307F3A5D3FB509 /* Pods_Merge_HealthTests.framework */; };
 /* End PBXBuildFile section */
@@ -74,6 +74,9 @@
 		7834C8432B9CE7DE00E1EDE2 /* Testing.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Testing.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		7834C8442B9FA9CE00E1EDE2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		783DB96C2B9BA8BB0075D120 /* Merge Health.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Merge Health.entitlements"; sourceTree = "<group>"; };
+		7864BD162BAB5C09005D48CB /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		7864BD182BAB5E10005D48CB /* IndividualMetricVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividualMetricVC.swift; sourceTree = "<group>"; };
+		7864BD1A2BAB5E36005D48CB /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		78B1F6B12B9BB00C00AA1410 /* Python3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python3.framework; path = Library/Frameworks/Python3.framework; sourceTree = DEVELOPER_DIR; };
 		78B1F6B72B9BB29500AA1410 /* PermissionHealthKitSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionHealthKitSetup.swift; sourceTree = "<group>"; };
 		78B1F6B92B9BB2D100AA1410 /* UserDataInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataInformation.swift; sourceTree = "<group>"; };
@@ -99,11 +102,8 @@
 		78EE8EE02B75825900DC8B84 /* HealthProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthProfile.swift; sourceTree = "<group>"; };
 		78EE8EE22B76463D00DC8B84 /* CorrelationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrelationVC.swift; sourceTree = "<group>"; };
 		78EE8EE32B76468700DC8B84 /* GeneralDashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralDashboardVC.swift; sourceTree = "<group>"; };
-		78EE8EE82B7648BB00DC8B84 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
-		78EE8EEC2B76491C00DC8B84 /* IndividualMetricVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualMetricVC.swift; sourceTree = "<group>"; };
 		78EE8EEE2B764DC100DC8B84 /* AveragePerWeekVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AveragePerWeekVC.swift; sourceTree = "<group>"; };
 		78EE8EF02B764DE600DC8B84 /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
-		78EE8EF22B764EFB00DC8B84 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		78EE8EF42B764F0E00DC8B84 /* PersonalDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDetailsVC.swift; sourceTree = "<group>"; };
 		BCA3BD48992E8EE2F3EC2D1B /* Pods_Merge_Health.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Merge_Health.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF60A98AFE33C86805E5F75E /* Pods-Merge Health.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Merge Health.debug.xcconfig"; path = "Target Support Files/Pods-Merge Health/Pods-Merge Health.debug.xcconfig"; sourceTree = "<group>"; };
@@ -265,18 +265,18 @@
 		78EE8EDA2B757FBB00DC8B84 /* Controller (View) */ = {
 			isa = PBXGroup;
 			children = (
+				7864BD1A2BAB5E36005D48CB /* LoginVC.swift */,
+				7864BD182BAB5E10005D48CB /* IndividualMetricVC.swift */,
 				78DCA8EC2B8E4D5100F39227 /* Metrics_ */,
-				78EE8EE82B7648BB00DC8B84 /* LoginVC.swift */,
 				78EE8EE32B76468700DC8B84 /* GeneralDashboardVC.swift */,
-				78EE8EEC2B76491C00DC8B84 /* IndividualMetricVC.swift */,
 				78EE8EE22B76463D00DC8B84 /* CorrelationVC.swift */,
 				78EE8EEE2B764DC100DC8B84 /* AveragePerWeekVC.swift */,
 				78EE8EF02B764DE600DC8B84 /* RegistrationVC.swift */,
-				78EE8EF22B764EFB00DC8B84 /* ProfileVC.swift */,
 				78EE8EF42B764F0E00DC8B84 /* PersonalDetailsVC.swift */,
 				78BCF9D92B7658D000D1DEC6 /* ViewController.swift */,
 				78BCF9DD2B7E885900D1DEC6 /* ForgotPasswordVC.swift */,
 				7834C8412B9CE78400E1EDE2 /* TodayVC.swift */,
+				7864BD162BAB5C09005D48CB /* ProfileVC.swift */,
 			);
 			path = "Controller (View)";
 			sourceTree = "<group>";
@@ -329,7 +329,6 @@
 				DE09D02B00122826994A4CA2 /* Pods-Merge HealthTests.debug.xcconfig */,
 				1296CB36A7668E91E3B33E2B /* Pods-Merge HealthTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -576,7 +575,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78EE8EF32B764EFB00DC8B84 /* ProfileVC.swift in Sources */,
+				7864BD1B2BAB5E36005D48CB /* LoginVC.swift in Sources */,
 				78EE8EEF2B764DC100DC8B84 /* AveragePerWeekVC.swift in Sources */,
 				78EE8EF52B764F0E00DC8B84 /* PersonalDetailsVC.swift in Sources */,
 				78B1F6BA2B9BB2D100AA1410 /* UserDataInformation.swift in Sources */,
@@ -593,10 +592,10 @@
 				78BCF9DE2B7E885900D1DEC6 /* ForgotPasswordVC.swift in Sources */,
 				78EB59162B93E12E007272DA /* UIColor+Extensions.swift in Sources */,
 				78EE8EEB2B7648C000DC8B84 /* CorrelationVC.swift in Sources */,
-				78EE8EED2B76491C00DC8B84 /* IndividualMetricVC.swift in Sources */,
 				7834C8422B9CE78400E1EDE2 /* TodayVC.swift in Sources */,
-				78EE8EE92B7648BB00DC8B84 /* LoginVC.swift in Sources */,
+				7864BD192BAB5E10005D48CB /* IndividualMetricVC.swift in Sources */,
 				78DD43522B670A2D0067EB4B /* health_data.xcdatamodeld in Sources */,
+				7864BD172BAB5C09005D48CB /* ProfileVC.swift in Sources */,
 				781314222BA46E9D0037F114 /* StepsTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -774,6 +773,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Merge Health/Merge Health.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6XDAT75S8N;
@@ -792,6 +792,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.DaBa.mergeHealth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -805,6 +806,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Merge Health/Merge Health.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6XDAT75S8N;
@@ -823,6 +825,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.DaBa.mergeHealth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

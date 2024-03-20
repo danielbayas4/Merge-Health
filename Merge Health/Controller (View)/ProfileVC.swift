@@ -60,7 +60,7 @@ class ProfileVC: UIViewController {
                             }
                         }
                     }
-                } 
+                }
                     else {
                     DispatchQueue.main.async {
                         //self.showHealthDataUnavailableAlert()

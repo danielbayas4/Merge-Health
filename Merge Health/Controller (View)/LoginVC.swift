@@ -1,4 +1,5 @@
 import UIKit
+import CLTypingLabel
 
 class LoginVC: UIViewController {
     
@@ -8,7 +9,7 @@ class LoginVC: UIViewController {
         static let toForgotPassword = "toForgotPassword"
     }
     
-    @IBOutlet var appTitleLabel: UILabel!
+    @IBOutlet var appTitleLabel: CLTypingLabel!
     
     
     @IBOutlet var rememberMeSwitch: UISwitch!
@@ -23,6 +24,8 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initialUI()
+        
+        appTitleLabel.text = "Merge Health!"
         
         
     }

@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Merge Health" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSv-zO-9QH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Merge Health" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSv-zO-9QH" customClass="CLTypingLabel" customModule="Merge_Health" customModuleProvider="target">
                                 <rect key="frame" x="75" y="293" width="243" height="40.666666666666686"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                 <nil key="textColor"/>
@@ -692,9 +692,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="Zmk-Q5-iOe"/>
                     <connections>
-                        <outlet property="appleHealthButton" destination="nnP-Zf-D1i" id="hvP-cQ-wrG"/>
-                        <outlet property="polarButton" destination="lXd-3Y-XZg" id="5aj-47-tcL"/>
-                        <outlet property="toPersonalDetailsButton" destination="l1h-OH-KBh" id="qpS-TG-5R8"/>
+                        <outlet property="appleHealthButton" destination="nnP-Zf-D1i" id="DPg-pC-gm4"/>
+                        <outlet property="polarButton" destination="lXd-3Y-XZg" id="q64-3B-ACU"/>
+                        <outlet property="toPersonalDetailsButton" destination="l1h-OH-KBh" id="pZk-ap-TnK"/>
                         <segue destination="u8B-Qh-YG3" kind="show" identifier="toPersonalDetails" id="d7a-Yz-SDQ"/>
                     </connections>
                 </viewController>
@@ -867,16 +867,21 @@
             <point key="canvasLocation" x="-1344.2748091603053" y="-254.22535211267606"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="HSv-zO-9QH">
+            <size key="intrinsicContentSize" width="213" height="40.666666666666664"/>
+        </designable>
+    </designables>
     <resources>
-        <image name="number" catalog="system" width="128" height="123"/>
+        <image name="number" catalog="system" width="32" height="32"/>
         <image name="person.crop.circle" catalog="system" width="128" height="123"/>
-        <image name="square.and.arrow.up.badge.clock" catalog="system" width="117" height="128"/>
-        <image name="square.on.square.intersection.dashed" catalog="system" width="128" height="116"/>
+        <image name="square.and.arrow.up.badge.clock" catalog="system" width="32" height="32"/>
+        <image name="square.on.square.intersection.dashed" catalog="system" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
-            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="underPageBackgroundColor">
             <color red="0.70980392156862748" green="0.71764705882352942" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
