@@ -510,6 +510,9 @@
                                 <rect key="frame" x="30" y="540" width="333" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Register"/>
+                                <connections>
+                                    <action selector="registerAction:" destination="nEr-75-fVm" eventType="touchUpInside" id="2Z8-8R-eOR"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repeat email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VNH-97-vp2">
                                 <rect key="frame" x="30" y="323" width="333" height="34"/>
@@ -544,7 +547,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="fe6-Ki-3dr"/>
                     <connections>
+                        <outlet property="emailTextField" destination="lgg-Kf-eZb" id="uei-ZL-wA4"/>
+                        <outlet property="nameTextField" destination="3wU-Uh-cav" id="FXE-RK-phY"/>
+                        <outlet property="passwordTextField" destination="ieD-zF-kSh" id="yfd-ye-7Wc"/>
                         <outlet property="registerButton" destination="Y9A-ZT-e76" id="yzo-Gc-P7H"/>
+                        <outlet property="repeatEmailTextField" destination="VNH-97-vp2" id="rIh-wO-KRs"/>
+                        <outlet property="repeatPasswordTextfield" destination="7DN-pq-1IK" id="Zt9-ti-Bz8"/>
+                        <segue destination="jXx-ws-oHj" kind="showDetail" identifier="registrationToMain" id="9na-Yz-Ogr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OtK-Mf-n4H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -595,7 +604,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qn5-xt-giF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="105" y="539"/>
+            <point key="canvasLocation" x="640" y="651"/>
         </scene>
         <!--Profile-->
         <scene sceneID="okR-pS-yEl">
@@ -872,6 +881,9 @@
             <size key="intrinsicContentSize" width="213" height="40.666666666666664"/>
         </designable>
     </designables>
+    <inferredMetricsTieBreakers>
+        <segue reference="9na-Yz-Ogr"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="number" catalog="system" width="32" height="32"/>
         <image name="person.crop.circle" catalog="system" width="128" height="123"/>
