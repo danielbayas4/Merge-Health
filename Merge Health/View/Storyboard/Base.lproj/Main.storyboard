@@ -14,36 +14,39 @@
             <objects>
                 <viewController id="7l6-dc-cYx" customClass="LoginVC" customModule="Merge_Health" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rtu-4M-ua0">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Merge Health" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSv-zO-9QH" customClass="CLTypingLabel" customModule="Merge_Health" customModuleProvider="target">
-                                <rect key="frame" x="75" y="293" width="243" height="40.666666666666686"/>
+                                <rect key="frame" x="75" y="190" width="243" height="40.666666666666657"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M6D-HZ-pCD">
-                                <rect key="frame" x="30" y="373.66666666666669" width="333" height="34"/>
+                                <rect key="frame" x="30" y="270.66666666666669" width="333" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EI4-Vc-J7l">
-                                <rect key="frame" x="30" y="437.66666666666669" width="333" height="34"/>
+                                <rect key="frame" x="30" y="334.66666666666669" width="333" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQm-47-JAw">
-                                <rect key="frame" x="30" y="496.66666666666669" width="124" height="21.000000000000057"/>
+                                <rect key="frame" x="30" y="393.66666666666669" width="124" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zIm-Cw-wj6">
-                                <rect key="frame" x="314" y="496.66666666666674" width="51" height="31"/>
+                                <rect key="frame" x="314" y="393.66666666666669" width="51" height="31"/>
+                                <connections>
+                                    <action selector="rememberMeAction:" destination="7l6-dc-cYx" eventType="valueChanged" id="c8z-A0-Muw"/>
+                                </connections>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEn-qD-lkQ">
-                                <rect key="frame" x="30" y="542.66666666666663" width="87" height="35"/>
+                                <rect key="frame" x="30" y="439.66666666666669" width="87" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Register"/>
                                 <connections>
@@ -51,7 +54,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvh-84-uev">
-                                <rect key="frame" x="30" y="637.66666666666663" width="333" height="35"/>
+                                <rect key="frame" x="30" y="534.66666666666663" width="333" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Login"/>
                                 <connections>
@@ -59,7 +62,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHc-un-HTk">
-                                <rect key="frame" x="187" y="542.66666666666663" width="189" height="35"/>
+                                <rect key="frame" x="187" y="439.66666666666669" width="189" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Forgot the password?"/>
                                 <connections>
@@ -96,8 +99,10 @@
                     <navigationItem key="navigationItem" id="mHy-OZ-urV"/>
                     <connections>
                         <outlet property="appTitleLabel" destination="HSv-zO-9QH" id="4gY-u7-PMC"/>
+                        <outlet property="emailTextField" destination="M6D-HZ-pCD" id="MMw-rR-7jx"/>
                         <outlet property="forgotPasswordButton" destination="iHc-un-HTk" id="sr4-iZ-iXP"/>
                         <outlet property="loginButton" destination="vvh-84-uev" id="z2l-gL-niX"/>
+                        <outlet property="passwordTextField" destination="EI4-Vc-J7l" id="h1V-IE-r9y"/>
                         <outlet property="registerButton" destination="dEn-qD-lkQ" id="Ukb-CB-lIJ"/>
                         <outlet property="rememberMeSwitch" destination="zIm-Cw-wj6" id="zjb-8P-Efa"/>
                         <segue destination="jXx-ws-oHj" kind="showDetail" identifier="toMainServices" id="qMs-Vj-Lcy"/>
@@ -213,11 +218,11 @@
             <objects>
                 <viewController id="iKv-lD-934" customClass="AveragePerWeekVC" customModule="Merge_Health" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MRy-kr-oPa">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gb8-Fr-msC">
-                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <rect key="frame" x="0.0" y="56" width="393" height="747"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="iKv-lD-934" id="Svt-n6-iAK"/>
@@ -246,19 +251,19 @@
         <!--Dashboard-->
         <scene sceneID="bDZ-w9-Q9P">
             <objects>
-                <viewController title="Dashboard" id="zna-DK-IuN" customClass="GeneralDashboardVC" customModule="Merge_Health" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GeneralDashboardVC" title="Dashboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zna-DK-IuN" customClass="GeneralDashboardVC" customModule="Merge_Health" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BR1-rv-mgA">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNX-ay-7Ba">
-                                <rect key="frame" x="15" y="174" width="363" height="39"/>
+                                <rect key="frame" x="15" y="127" width="363" height="39"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tvm-dU-n42">
-                                <rect key="frame" x="15" y="228" width="363" height="35"/>
+                                <rect key="frame" x="15" y="181" width="363" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Resting heart rate"/>
                                 <connections>
@@ -266,49 +271,49 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0l3-8i-fNV">
-                                <rect key="frame" x="15" y="283" width="363" height="35"/>
+                                <rect key="frame" x="15" y="236" width="363" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Heart rate variability"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sg-z3-iKv">
-                                <rect key="frame" x="15" y="338" width="363" height="35"/>
+                                <rect key="frame" x="15" y="291" width="363" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Walking heart rate"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ql-ar-Ivd">
-                                <rect key="frame" x="15" y="452" width="363" height="35"/>
+                                <rect key="frame" x="15" y="405" width="363" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Steps"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movement" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHj-hE-IwA">
-                                <rect key="frame" x="15" y="398" width="363" height="39"/>
+                                <rect key="frame" x="15" y="351" width="363" height="39"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jf-kj-7i4">
-                                <rect key="frame" x="15" y="507" width="363" height="35"/>
+                                <rect key="frame" x="15" y="460" width="363" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Workout time"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sleep" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A9e-rO-uU8">
-                                <rect key="frame" x="15" y="567" width="363" height="39"/>
+                                <rect key="frame" x="15" y="520" width="363" height="39"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zrJ-Fa-coh">
-                                <rect key="frame" x="15" y="621" width="363" height="35"/>
+                                <rect key="frame" x="15" y="574" width="363" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Deep sleep"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="408-mc-xug">
-                                <rect key="frame" x="15" y="676" width="363" height="35"/>
+                                <rect key="frame" x="15" y="629" width="363" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="REM Sleep"/>
                             </button>
                             <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="q9T-V6-Iy4">
-                                <rect key="frame" x="15" y="108" width="363" height="56"/>
+                                <rect key="frame" x="15" y="61" width="363" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="zna-DK-IuN" id="K5V-e5-dig"/>
@@ -374,46 +379,46 @@
             <objects>
                 <viewController id="QyK-Q8-QjR" customClass="IndividualMetricVC" customModule="Merge_Health" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NAq-rA-g8G">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mQZ-bo-HMK">
-                                <rect key="frame" x="15" y="176" width="363" height="188"/>
+                                <rect key="frame" x="15" y="129" width="363" height="269"/>
                                 <color key="backgroundColor" systemColor="underPageBackgroundColor"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Metric Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxo-Ty-apO">
-                                <rect key="frame" x="15" y="123" width="363" height="33"/>
+                                <rect key="frame" x="15" y="76" width="363" height="33"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="diO-Gv-A3q">
-                                <rect key="frame" x="15" y="414" width="363" height="35"/>
+                                <rect key="frame" x="15" y="448" width="363" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Daily"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aS7-ke-L0O">
-                                <rect key="frame" x="15" y="469" width="363" height="35"/>
+                                <rect key="frame" x="15" y="503" width="363" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Weekly"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zcf-xw-iYY">
-                                <rect key="frame" x="15" y="524" width="363" height="35"/>
+                                <rect key="frame" x="15" y="558" width="363" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Monthly"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TnE-yT-UbX">
-                                <rect key="frame" x="15" y="579" width="363" height="35"/>
+                                <rect key="frame" x="15" y="613" width="363" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Yearly"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFY-8y-uXA">
-                                <rect key="frame" x="15" y="634" width="363" height="35"/>
+                                <rect key="frame" x="15" y="668" width="363" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Custom"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29L-y7-ydX">
-                                <rect key="frame" x="15" y="709" width="363" height="35"/>
+                                <rect key="frame" x="15" y="743" width="363" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Average per week"/>
                                 <connections>
@@ -477,37 +482,37 @@
             <objects>
                 <viewController id="nEr-75-fVm" customClass="RegistrationVC" customModule="Merge_Health" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6sl-S7-UWs">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registration" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xE-5C-NAv">
-                                <rect key="frame" x="30" y="118" width="200" height="47"/>
+                                <rect key="frame" x="30" y="15" width="200" height="47"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="39"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3wU-Uh-cav">
-                                <rect key="frame" x="30" y="185" width="333" height="34"/>
+                                <rect key="frame" x="30" y="82" width="333" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lgg-Kf-eZb">
-                                <rect key="frame" x="30" y="254" width="333" height="34"/>
+                                <rect key="frame" x="30" y="151" width="333" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ieD-zF-kSh">
-                                <rect key="frame" x="30" y="392" width="333" height="34"/>
+                                <rect key="frame" x="30" y="289" width="333" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repeat password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7DN-pq-1IK">
-                                <rect key="frame" x="30" y="461" width="333" height="34"/>
+                                <rect key="frame" x="30" y="358" width="333" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9A-ZT-e76">
-                                <rect key="frame" x="30" y="540" width="333" height="35"/>
+                                <rect key="frame" x="30" y="437" width="333" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Register"/>
                                 <connections>
@@ -515,7 +520,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repeat email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VNH-97-vp2">
-                                <rect key="frame" x="30" y="323" width="333" height="34"/>
+                                <rect key="frame" x="30" y="220" width="333" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -586,7 +591,7 @@
             <objects>
                 <viewController id="Nyl-J6-0YF" customClass="ForgotPasswordVC" customModule="Merge_Health" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kk2-he-TEW">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Forgot password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wz2-H5-VwI">
@@ -611,17 +616,17 @@
             <objects>
                 <viewController id="Wd0-zD-cl0" customClass="ProfileVC" customModule="Merge_Health" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dVW-ft-abk">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="APIs connection" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EFZ-Vj-ckk">
-                                <rect key="frame" x="30" y="348" width="333" height="40"/>
+                                <rect key="frame" x="30" y="301" width="333" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nnP-Zf-D1i">
-                                <rect key="frame" x="30" y="428" width="333" height="43"/>
+                                <rect key="frame" x="30" y="381" width="333" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="M4W-3D-DuZ"/>
                                 </constraints>
@@ -632,24 +637,24 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpw-Tu-Lbi">
-                                <rect key="frame" x="30" y="684" width="29" height="21"/>
+                                <rect key="frame" x="30" y="637" width="29" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v: 1.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J13-tL-ehT">
-                                <rect key="frame" x="30" y="715" width="50" height="21"/>
+                                <rect key="frame" x="30" y="668" width="50" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lXd-3Y-XZg">
-                                <rect key="frame" x="30" y="511" width="333" height="43"/>
+                                <rect key="frame" x="30" y="464" width="333" height="43"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Polar"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1h-OH-KBh">
-                                <rect key="frame" x="50" y="118" width="293" height="200"/>
+                                <rect key="frame" x="50" y="71" width="293" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="7DX-oC-wal"/>
                                 </constraints>
@@ -660,10 +665,10 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up.badge.clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dKY-xt-TOt">
-                                <rect key="frame" x="76.666666666666671" y="156" width="242.66666666666669" height="123.33333333333337"/>
+                                <rect key="frame" x="76.666666666666671" y="109.00000000000001" width="242.66666666666669" height="123.33333333333333"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tomas Alfaro" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5QC-1K-qdU">
-                                <rect key="frame" x="76.666666666666686" y="288" width="240" height="21"/>
+                                <rect key="frame" x="76.666666666666686" y="241" width="240" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -716,36 +721,39 @@
             <objects>
                 <viewController id="u8B-Qh-YG3" customClass="PersonalDetailsVC" customModule="Merge_Health" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bei-4T-AS5">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Tomas" borderStyle="roundedRect" placeholder="First name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qf0-dG-RLR">
-                                <rect key="frame" x="30" y="143" width="333" height="34"/>
+                                <rect key="frame" x="30" y="96" width="333" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Alfaro" borderStyle="roundedRect" placeholder="Last name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BeE-zz-W3d">
-                                <rect key="frame" x="30" y="217" width="333" height="34"/>
+                                <rect key="frame" x="30" y="170" width="333" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="tomas.alfaro@gmail.com" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UCZ-pZ-GgS">
-                                <rect key="frame" x="30" y="291" width="333" height="34"/>
+                                <rect key="frame" x="30" y="244" width="333" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mwp-xm-XXr">
-                                <rect key="frame" x="30" y="370" width="333" height="35"/>
+                                <rect key="frame" x="30" y="323" width="333" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Save changes"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ppi-uN-t3r">
-                                <rect key="frame" x="30" y="460" width="333" height="35"/>
+                                <rect key="frame" x="30" y="413" width="333" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Log Out"/>
+                                <connections>
+                                    <action selector="logOutAction:" destination="u8B-Qh-YG3" eventType="touchUpInside" id="aiS-Vw-JcO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFq-4k-YvK">
-                                <rect key="frame" x="30" y="520" width="333" height="35"/>
+                                <rect key="frame" x="30" y="473" width="333" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Eliminate account"/>
                             </button>
@@ -778,11 +786,12 @@
                         <outlet property="eliminateAccountButton" destination="xFq-4k-YvK" id="kSB-tM-u2s"/>
                         <outlet property="logOutButton" destination="Ppi-uN-t3r" id="eaa-Hz-0yN"/>
                         <outlet property="saveChanges" destination="Mwp-xm-XXr" id="PI6-XV-qip"/>
+                        <segue destination="7l6-dc-cYx" kind="showDetail" identifier="logOutToLogIn" id="Zxs-Wl-dGY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fEq-dm-dAs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4367.1755725190842" y="538.73239436619724"/>
+            <point key="canvasLocation" x="4587" y="539"/>
         </scene>
         <!--Today-->
         <scene sceneID="xj7-St-hzn">
@@ -822,11 +831,11 @@
         <!--General Dashboard-->
         <scene sceneID="pvj-lJ-iNX">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gfm-cJ-ond" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="TabBarGeneralDashBoard" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gfm-cJ-ond" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="General Dashboard" image="number" catalog="system" id="VBr-Bd-6Q4"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aM7-we-Cgg">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -845,7 +854,7 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="person.crop.circle" catalog="system" id="Zyw-CB-dhK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="R9Z-LI-DIV">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -882,13 +891,14 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="9na-Yz-Ogr"/>
+        <segue reference="qMs-Vj-Lcy"/>
+        <segue reference="Zxs-Wl-dGY"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="number" catalog="system" width="32" height="32"/>
+        <image name="number" catalog="system" width="128" height="123"/>
         <image name="person.crop.circle" catalog="system" width="128" height="123"/>
-        <image name="square.and.arrow.up.badge.clock" catalog="system" width="32" height="32"/>
-        <image name="square.on.square.intersection.dashed" catalog="system" width="32" height="32"/>
+        <image name="square.and.arrow.up.badge.clock" catalog="system" width="117" height="128"/>
+        <image name="square.on.square.intersection.dashed" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

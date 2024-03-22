@@ -7,13 +7,23 @@ import FirebaseAuth
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    var window: UIWindow?
 
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        //self.window = UIWindow(frame: UIScreen.main.bounds)
+        
         FirebaseApp.configure()
+        
+//        let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let mainViewController: UIViewController = mainStoryBoard.instantiateViewController(withIdentifier: "GeneralDashboardVC")
+//        self.window?.rootViewController = mainViewController
+//
+//        self.window?.makeKeyAndVisible()
         
         return true
     }

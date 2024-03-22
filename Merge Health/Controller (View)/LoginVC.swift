@@ -1,13 +1,16 @@
 import UIKit
 import CLTypingLabel
+import FirebaseAuth
 
-class LoginVC: UIViewController {
+class LoginVC: UIViewController, UITextFieldDelegate {
     
     enum Segues {
         static let toMainServices = "toMainServices"
         static let toRegistration = "toRegistration"
         static let toForgotPassword = "toForgotPassword"
     }
+    @IBOutlet var emailTextField: UITextField!
+    @IBOutlet var passwordTextField: UITextField!
     
     @IBOutlet var appTitleLabel: CLTypingLabel!
     
@@ -23,12 +26,50 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         initialUI()
         
         appTitleLabel.text = "Merge Health!"
         
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        
+
+        
+        //If the user is authenticated, go directly to the tab bar controller
+        
         
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print(UserDefaults.standard.bool(forKey: "RememberMe"))
+        
+        
+        if UserDefaults.standard.bool(forKey: "RememberMe") == true {
+            //procede
+        } 
+        else {
+            let firebaseAuth = Auth.auth()
+            do {
+              try firebaseAuth.signOut()
+            } catch let signOutError as NSError {
+              print("Error signing out: %@", signOutError)
+            }
+        }
+        
+        if Auth.auth().currentUser != nil {
+            performSegue(withIdentifier: Segues.toMainServices, sender: self)
+        }
+    }
+    
+    
+    @IBAction func rememberMeAction(_ sender: UISwitch) {
+        UserDefaults.standard.set(sender.isOn, forKey: "RememberMe")
+        print(sender.isOn)
+    }
+
+    
+
     
     
     func initialUI(){
@@ -58,8 +99,33 @@ class LoginVC: UIViewController {
         
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+         textField.resignFirstResponder() // Dismiss the keyboard
+         return true
+     }
+    
     @IBAction func loginAction(_ sender: Any) {
-        performSegue(withIdentifier: Segues.toMainServices, sender: self)
+        
+        if let email = emailTextField.text, let password = passwordTextField.text {
+            Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+                
+                if let e = error {
+                    print(e)
+                    //FIRAuthErrors to print the errors
+                } else {
+                    self!.performSegue(withIdentifier: Segues.toMainServices, sender: self)
+                }
+                
+                guard let strongSelf = self else { return }
+                
+            }
+        }
+        
+        
+        
+        
+        
+        
     }
     
     
