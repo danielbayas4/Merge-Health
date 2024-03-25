@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		01F4FC0A89FE90BBA0D1AFEA /* Pods_Merge_Health_Merge_HealthUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D621A294284288A2CFEC28B6 /* Pods_Merge_Health_Merge_HealthUITests.framework */; };
 		214624B62BEFF18CF2FAAA09 /* Pods_Merge_Health.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA3BD48992E8EE2F3EC2D1B /* Pods_Merge_Health.framework */; };
-		780363BF2BA636F0006C2CDB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 780363BE2BA636F0006C2CDB /* GoogleService-Info.plist */; };
 		7813141D2BA0882F0037F114 /* RestingHeartRate.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7813141C2BA0882F0037F114 /* RestingHeartRate.xib */; };
 		7813141E2BA0882F0037F114 /* RestingHeartRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7813141B2BA0882F0037F114 /* RestingHeartRate.swift */; };
 		781314212BA46E9D0037F114 /* StepsTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 781314202BA46E9C0037F114 /* StepsTVC.xib */; };
@@ -23,6 +22,7 @@
 		78B1F6BA2B9BB2D100AA1410 /* UserDataInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B1F6B92B9BB2D100AA1410 /* UserDataInformation.swift */; };
 		78BCF9DA2B7658D000D1DEC6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCF9D92B7658D000D1DEC6 /* ViewController.swift */; };
 		78BCF9DE2B7E885900D1DEC6 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCF9DD2B7E885900D1DEC6 /* ForgotPasswordVC.swift */; };
+		78D6C1052BB0645D004C3C4D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 78D6C1042BB0645D004C3C4D /* GoogleService-Info.plist */; };
 		78DCA8EE2B8E4D9100F39227 /* resting_heart_rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DCA8ED2B8E4D9100F39227 /* resting_heart_rate.swift */; };
 		78DD431E2B67048C0067EB4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DD431D2B67048C0067EB4B /* AppDelegate.swift */; };
 		78DD43202B67048C0067EB4B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DD431F2B67048C0067EB4B /* SceneDelegate.swift */; };
@@ -65,7 +65,6 @@
 		1296CB36A7668E91E3B33E2B /* Pods-Merge HealthTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Merge HealthTests.release.xcconfig"; path = "Target Support Files/Pods-Merge HealthTests/Pods-Merge HealthTests.release.xcconfig"; sourceTree = "<group>"; };
 		35C5591F2F8545B4D16DF8B8 /* Pods-Merge Health.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Merge Health.release.xcconfig"; path = "Target Support Files/Pods-Merge Health/Pods-Merge Health.release.xcconfig"; sourceTree = "<group>"; };
 		492132BBC61386329B657758 /* Pods-Merge Health-Merge HealthUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Merge Health-Merge HealthUITests.release.xcconfig"; path = "Target Support Files/Pods-Merge Health-Merge HealthUITests/Pods-Merge Health-Merge HealthUITests.release.xcconfig"; sourceTree = "<group>"; };
-		780363BE2BA636F0006C2CDB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7813141B2BA0882F0037F114 /* RestingHeartRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestingHeartRate.swift; sourceTree = "<group>"; };
 		7813141C2BA0882F0037F114 /* RestingHeartRate.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestingHeartRate.xib; sourceTree = "<group>"; };
 		7813141F2BA46E9C0037F114 /* StepsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsTVC.swift; sourceTree = "<group>"; };
@@ -82,6 +81,7 @@
 		78B1F6B92B9BB2D100AA1410 /* UserDataInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataInformation.swift; sourceTree = "<group>"; };
 		78BCF9D92B7658D000D1DEC6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		78BCF9DD2B7E885900D1DEC6 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
+		78D6C1042BB0645D004C3C4D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		78DCA8ED2B8E4D9100F39227 /* resting_heart_rate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resting_heart_rate.swift; sourceTree = "<group>"; };
 		78DD431A2B67048C0067EB4B /* Merge Health.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Merge Health.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78DD431D2B67048C0067EB4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -204,6 +204,7 @@
 		78DD431C2B67048C0067EB4B /* Merge Health */ = {
 			isa = PBXGroup;
 			children = (
+				78D6C1042BB0645D004C3C4D /* GoogleService-Info.plist */,
 				783DB96C2B9BA8BB0075D120 /* Merge Health.entitlements */,
 				78EE8EDE2B7580A200DC8B84 /* Model */,
 				78EE8EDB2B757FC500DC8B84 /* App Delegate */,
@@ -211,7 +212,6 @@
 				78EE8ED92B757FB400DC8B84 /* View */,
 				78EE8ED82B757FA700DC8B84 /* Resources */,
 				78DD432E2B67048D0067EB4B /* Info.plist */,
-				780363BE2BA636F0006C2CDB /* GoogleService-Info.plist */,
 				78EB59152B93E12E007272DA /* UIColor+Extensions.swift */,
 				78B1F6B72B9BB29500AA1410 /* PermissionHealthKitSetup.swift */,
 				78B1F6B92B9BB2D100AA1410 /* UserDataInformation.swift */,
@@ -447,7 +447,7 @@
 				781314212BA46E9D0037F114 /* StepsTVC.xib in Resources */,
 				7813141D2BA0882F0037F114 /* RestingHeartRate.xib in Resources */,
 				78DD43252B67048C0067EB4B /* Main.storyboard in Resources */,
-				780363BF2BA636F0006C2CDB /* GoogleService-Info.plist in Resources */,
+				78D6C1052BB0645D004C3C4D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

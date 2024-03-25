@@ -46,6 +46,9 @@ class TodayVC: UIViewController {
         let startOfDay = Calendar.current.startOfDay(for: now)
         let predicate = HKQuery.predicateForSamples(withStart: startOfDay, end: now, options: .strictStartDate)
         
+        
+        
+        
         let query = HKStatisticsQuery(quantityType: heartRateType, quantitySamplePredicate: predicate, options: .discreteAverage) { _, result, _ in
             guard let result = result, let avgQuantity = result.averageQuantity() else {
                 DispatchQueue.main.async {
@@ -103,19 +106,26 @@ class TodayVC: UIViewController {
             return
         }
 
-        // Define the date components for the last 10 days
+        //date components for the past 10 days
         let calendar = Calendar.current
         let endDate = Date()
         guard let startDate = calendar.date(byAdding: .day, value: -10, to: endDate) else { return }
 
-        // Use HKStatisticsOptions to define the calculation as cumulative sum
+        
+        
+        // define the cumulative sum
         let statisticsOptions = HKStatisticsOptions.discreteAverage
 
-        // Create a predicate to filter the data
+        
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictStartDate)
 
         // Define the query to calculate the sum
-        let query = HKStatisticsCollectionQuery(quantityType: heartRateType, quantitySamplePredicate: predicate, options: statisticsOptions, anchorDate: startDate, intervalComponents: DateComponents(day: 1))
+        let query = HKStatisticsCollectionQuery(
+            quantityType: heartRateType,
+            quantitySamplePredicate: predicate,
+            options: statisticsOptions,
+            anchorDate: startDate,
+            intervalComponents: DateComponents(day: 1))
 
         // Set the initial results handler
         query.initialResultsHandler = { query, results, error in
@@ -136,6 +146,8 @@ class TodayVC: UIViewController {
                     
                     //Hacer que calcule el average en los anteriores 10 días, y de ahí que lo ponga dentro de esa variable
                 }
+                
+                print("daily averages ", dailyAverages)
             }
             
             
@@ -153,6 +165,7 @@ class TodayVC: UIViewController {
         healthStore.execute(query)
     }
     
+    //Tengo que ponerme un poco m´ås las pilas que no me estoy moviendo lo
     
     func fetchStepCountData() {
         let stepType = HKQuantityType.quantityType(forIdentifier: .stepCount)!

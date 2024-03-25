@@ -2,6 +2,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 class RegistrationVC: UIViewController, UITextFieldDelegate {
     
@@ -17,6 +18,9 @@ class RegistrationVC: UIViewController, UITextFieldDelegate {
     @IBOutlet var passwordTextField: UITextField!
     
     @IBOutlet var repeatPasswordTextfield: UITextField!
+
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,21 +38,39 @@ class RegistrationVC: UIViewController, UITextFieldDelegate {
         
     }
     
+    
+    /// Main functionality that connects it to Firebase
     @IBAction func registerAction(_ sender: Any) {
         
         //Optional chaining
-        if let email = emailTextField.text, let password = passwordTextField.text {
+        if let email = emailTextField.text, let password = passwordTextField.text, let name = nameTextField.text {
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                 
                 //authResult is the user data
+                
+                let db = Firestore.firestore()
                 
                 if let e = error {
                     print(e.localizedDescription)
                     //Pop up to show the user the error
                 } else {
-                    //Navigation to the main program
-                    self.performSegue(withIdentifier: "registrationToMain" , sender: self)
-                    
+                    if let userID = authResult?.user.uid {
+                        db.collection("users").document(userID).setData([
+                            "name": name,
+                            "email": email
+                        ]) { error in
+                            
+                            if let error = error {
+                                print ("There was an error writing at the document: \(error)")
+                            } else {
+                                print ("The user name was succesfully written")
+                            }
+                        }
+                        //Navigation to the main program
+                        self.performSegue(withIdentifier: "registrationToMain" , sender: self)
+                        
+                    }
+                   
                 }
         }
 

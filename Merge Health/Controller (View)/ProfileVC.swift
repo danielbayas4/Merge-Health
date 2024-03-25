@@ -5,6 +5,8 @@ class ProfileVC: UIViewController {
     
     let healthStore = HKHealthStore()
     
+    @IBOutlet var nameLabel: UILabel!
+    
     @IBOutlet var toPersonalDetailsButton: UIButton!
     
     @IBOutlet var appleHealthButton: UIButton!
@@ -25,6 +27,10 @@ class ProfileVC: UIViewController {
         
         appleHealthButton.tintColor = UIColor(hex: "161A30")
         polarButton.tintColor = UIColor(hex: "161A30")
+        
+        if let currentUser = UserDataInformation.shared.currentUser {
+            nameLabel.text = currentUser.name
+        }
         
         
         

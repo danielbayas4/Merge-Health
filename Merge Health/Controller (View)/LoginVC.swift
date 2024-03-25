@@ -8,6 +8,8 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         static let toMainServices = "toMainServices"
         static let toRegistration = "toRegistration"
         static let toForgotPassword = "toForgotPassword"
+        
+        //Just a testing
     }
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!

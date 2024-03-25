@@ -19,13 +19,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         
-//        let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//        let mainViewController: UIViewController = mainStoryBoard.instantiateViewController(withIdentifier: "GeneralDashboardVC")
-//        self.window?.rootViewController = mainViewController
-//
-//        self.window?.makeKeyAndVisible()
+        let db = Firestore.firestore()
+        
+        UserDataInformation.shared.fetchUserData { success in
+            if success {
+                DispatchQueue.main.async {
+                            //exp: Puedo hacer una modificación de mi UI
+                        }
+                
+            }
+            
+        }
+        
+        
+    
         
         return true
+        
+        //        let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        //        let mainViewController: UIViewController = mainStoryBoard.instantiateViewController(withIdentifier: "GeneralDashboardVC")
+        //        self.window?.rootViewController = mainViewController
+        //
+        //        self.window?.makeKeyAndVisible()
+        
     }
 
     // MARK: UISceneSession Lifecycle

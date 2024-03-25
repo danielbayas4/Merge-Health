@@ -13,6 +13,7 @@ class GeneralDashboardVC: UIViewController {
     
     @IBOutlet var deepSleep: UIButton!
     @IBOutlet var REMSleepButton: UIButton!
+    //Just a testing
     
     
     override func viewDidLoad() {

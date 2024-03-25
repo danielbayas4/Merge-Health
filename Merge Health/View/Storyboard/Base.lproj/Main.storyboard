@@ -112,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rll-en-5aS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-417.55725190839695" y="-254.22535211267606"/>
+            <point key="canvasLocation" x="-356" y="-269"/>
         </scene>
         <!--Correlation-->
         <scene sceneID="f0p-PQ-Mj0">
@@ -707,6 +707,7 @@
                     <navigationItem key="navigationItem" title="Profile" id="Zmk-Q5-iOe"/>
                     <connections>
                         <outlet property="appleHealthButton" destination="nnP-Zf-D1i" id="DPg-pC-gm4"/>
+                        <outlet property="nameLabel" destination="5QC-1K-qdU" id="QJ1-Hg-75D"/>
                         <outlet property="polarButton" destination="lXd-3Y-XZg" id="q64-3B-ACU"/>
                         <outlet property="toPersonalDetailsButton" destination="l1h-OH-KBh" id="pZk-ap-TnK"/>
                         <segue destination="u8B-Qh-YG3" kind="show" identifier="toPersonalDetails" id="d7a-Yz-SDQ"/>
@@ -724,28 +725,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Tomas" borderStyle="roundedRect" placeholder="First name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qf0-dG-RLR">
-                                <rect key="frame" x="30" y="96" width="333" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BeE-zz-W3d">
+                                <rect key="frame" x="30" y="166" width="333" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Alfaro" borderStyle="roundedRect" placeholder="Last name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BeE-zz-W3d">
-                                <rect key="frame" x="30" y="170" width="333" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="tomas.alfaro@gmail.com" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UCZ-pZ-GgS">
-                                <rect key="frame" x="30" y="244" width="333" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UCZ-pZ-GgS">
+                                <rect key="frame" x="30" y="240" width="333" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mwp-xm-XXr">
-                                <rect key="frame" x="30" y="323" width="333" height="35"/>
+                                <rect key="frame" x="30" y="319" width="333" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Save changes"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ppi-uN-t3r">
-                                <rect key="frame" x="30" y="413" width="333" height="35"/>
+                                <rect key="frame" x="30" y="409" width="333" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Log Out"/>
                                 <connections>
@@ -753,31 +749,31 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFq-4k-YvK">
-                                <rect key="frame" x="30" y="473" width="333" height="35"/>
+                                <rect key="frame" x="30" y="469" width="333" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Eliminate account"/>
+                                <connections>
+                                    <action selector="eliminateAccountAction:" destination="u8B-Qh-YG3" eventType="touchUpInside" id="mbF-js-QkO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OTy-SG-hPa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="UCZ-pZ-GgS" firstAttribute="leading" secondItem="BeE-zz-W3d" secondAttribute="leading" id="27N-xc-spB"/>
-                            <constraint firstItem="qf0-dG-RLR" firstAttribute="top" secondItem="OTy-SG-hPa" secondAttribute="top" constant="40" id="4Qs-5y-mJw"/>
-                            <constraint firstItem="BeE-zz-W3d" firstAttribute="top" secondItem="qf0-dG-RLR" secondAttribute="bottom" constant="40" id="92U-mX-eBp"/>
                             <constraint firstItem="Ppi-uN-t3r" firstAttribute="top" secondItem="Mwp-xm-XXr" secondAttribute="bottom" constant="55" id="CHs-Bu-xeH"/>
-                            <constraint firstItem="qf0-dG-RLR" firstAttribute="leading" secondItem="OTy-SG-hPa" secondAttribute="leading" constant="30" id="FIS-Ff-lm6"/>
+                            <constraint firstItem="OTy-SG-hPa" firstAttribute="trailing" secondItem="BeE-zz-W3d" secondAttribute="trailing" constant="30" id="O1K-Gb-sWx"/>
                             <constraint firstItem="Ppi-uN-t3r" firstAttribute="trailing" secondItem="Mwp-xm-XXr" secondAttribute="trailing" id="Opa-SU-Hq6"/>
                             <constraint firstItem="Ppi-uN-t3r" firstAttribute="leading" secondItem="Mwp-xm-XXr" secondAttribute="leading" id="Qzg-PQ-X6d"/>
-                            <constraint firstItem="BeE-zz-W3d" firstAttribute="leading" secondItem="qf0-dG-RLR" secondAttribute="leading" id="RMc-W3-ubV"/>
                             <constraint firstItem="xFq-4k-YvK" firstAttribute="leading" secondItem="Ppi-uN-t3r" secondAttribute="leading" id="VUW-lO-Wkr"/>
                             <constraint firstItem="UCZ-pZ-GgS" firstAttribute="trailing" secondItem="BeE-zz-W3d" secondAttribute="trailing" id="WoP-rK-oBx"/>
+                            <constraint firstItem="BeE-zz-W3d" firstAttribute="top" secondItem="OTy-SG-hPa" secondAttribute="top" constant="110" id="a7f-77-0Av"/>
                             <constraint firstItem="xFq-4k-YvK" firstAttribute="trailing" secondItem="Ppi-uN-t3r" secondAttribute="trailing" id="cgX-bI-COR"/>
-                            <constraint firstItem="OTy-SG-hPa" firstAttribute="trailing" secondItem="qf0-dG-RLR" secondAttribute="trailing" constant="30" id="hGe-BB-j3d"/>
+                            <constraint firstItem="BeE-zz-W3d" firstAttribute="leading" secondItem="OTy-SG-hPa" secondAttribute="leading" constant="30" id="fwQ-Cz-vT4"/>
                             <constraint firstItem="Mwp-xm-XXr" firstAttribute="top" secondItem="UCZ-pZ-GgS" secondAttribute="bottom" constant="45" id="hHX-rB-dfR"/>
                             <constraint firstItem="Mwp-xm-XXr" firstAttribute="trailing" secondItem="UCZ-pZ-GgS" secondAttribute="trailing" id="kPe-pm-rau"/>
                             <constraint firstItem="xFq-4k-YvK" firstAttribute="top" secondItem="Ppi-uN-t3r" secondAttribute="bottom" constant="25" id="mJF-Rd-bRA"/>
                             <constraint firstItem="Mwp-xm-XXr" firstAttribute="leading" secondItem="UCZ-pZ-GgS" secondAttribute="leading" id="uqT-i7-zsJ"/>
-                            <constraint firstItem="BeE-zz-W3d" firstAttribute="trailing" secondItem="qf0-dG-RLR" secondAttribute="trailing" id="vRC-3z-V5J"/>
                             <constraint firstItem="UCZ-pZ-GgS" firstAttribute="top" secondItem="BeE-zz-W3d" secondAttribute="bottom" constant="40" id="xCH-9D-76o"/>
                         </constraints>
                     </view>
@@ -785,6 +781,8 @@
                     <connections>
                         <outlet property="eliminateAccountButton" destination="xFq-4k-YvK" id="kSB-tM-u2s"/>
                         <outlet property="logOutButton" destination="Ppi-uN-t3r" id="eaa-Hz-0yN"/>
+                        <outlet property="mailField" destination="UCZ-pZ-GgS" id="mjZ-UL-lad"/>
+                        <outlet property="nameField" destination="BeE-zz-W3d" id="y2S-6a-Y8M"/>
                         <outlet property="saveChanges" destination="Mwp-xm-XXr" id="PI6-XV-qip"/>
                         <segue destination="7l6-dc-cYx" kind="showDetail" identifier="logOutToLogIn" id="Zxs-Wl-dGY"/>
                     </connections>
