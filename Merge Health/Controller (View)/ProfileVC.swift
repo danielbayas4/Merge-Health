@@ -1,5 +1,7 @@
 import UIKit
 import HealthKit
+import FirebaseFirestore
+import FirebaseAuth
 
 class ProfileVC: UIViewController {
     
@@ -36,7 +38,7 @@ class ProfileVC: UIViewController {
         
         
     }
-    
+
     
     
     
@@ -63,14 +65,26 @@ class ProfileVC: UIViewController {
                         } else {
                             DispatchQueue.main.async {
                                 print("Authorization granted")
+                                
+                                if let userID = Auth.auth().currentUser?.uid {
+                                    let db = Firestore.firestore()
+                                    let userDocument = db.collection("users").document(userID)
+                                    userDocument.updateData(["connection_to_healthkit": true]) { error in
+                                        if let error = error {
+                                            print("Error updating the document")
+                                        } else  {
+                                            print("The update of the document was succesful")
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
                 }
-                    else {
-                    DispatchQueue.main.async {
-                        //self.showHealthDataUnavailableAlert()
-                    }
+                else {
+                DispatchQueue.main.async {
+                    //self.showHealthDataUnavailableAlert()
+                }
                 }
     }
     

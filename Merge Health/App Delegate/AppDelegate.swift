@@ -21,28 +21,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let db = Firestore.firestore()
         
+        
+        
+        
         UserDataInformation.shared.fetchUserData { success in
             if success {
                 DispatchQueue.main.async {
                             //exp: Puedo hacer una modificación de mi UI
                         }
-                
             }
             
         }
         
+        let allMetrics: [QuantityMetric] = [RestingHeartRateM.shared, Steps.shared, WorkoutTime.shared, WalkingRunningDistance.shared, WalkingHeartRate.shared, HeartRateVariability.shared]
         
-    
+        for individualMetric in allMetrics {
+            individualMetric.fetchAllData()
+        }
         
         return true
-        
-        //        let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        //        let mainViewController: UIViewController = mainStoryBoard.instantiateViewController(withIdentifier: "GeneralDashboardVC")
-        //        self.window?.rootViewController = mainViewController
-        //
-        //        self.window?.makeKeyAndVisible()
-        
     }
+    
 
     // MARK: UISceneSession Lifecycle
 

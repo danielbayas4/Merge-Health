@@ -822,6 +822,9 @@ PODS:
     - BoringSSL-GRPC/Interface (= 0.0.32)
   - BoringSSL-GRPC/Interface (0.0.32)
   - CLTypingLabel (0.4.0)
+  - DGCharts (5.1.0):
+    - DGCharts/Core (= 5.1.0)
+  - DGCharts/Core (5.1.0)
   - FirebaseAppCheckInterop (10.23.0)
   - FirebaseAuth (10.23.0):
     - FirebaseAppCheckInterop (~> 10.17)
@@ -971,6 +974,7 @@ PODS:
 
 DEPENDENCIES:
   - CLTypingLabel (~> 0.4.0)
+  - DGCharts
   - FirebaseAuth
   - FirebaseFirestore
 
@@ -979,6 +983,7 @@ SPEC REPOS:
     - abseil
     - BoringSSL-GRPC
     - CLTypingLabel
+    - DGCharts
     - FirebaseAppCheckInterop
     - FirebaseAuth
     - FirebaseCore
@@ -1000,6 +1005,7 @@ SPEC CHECKSUMS:
   abseil: ebec4f56469dd7ce9ab08683c0319a68aa0ad86e
   BoringSSL-GRPC: 1e2348957acdbcad360b80a264a90799984b2ba6
   CLTypingLabel: 95a7d1faf7e3d1d952cd11cb0491d17d80c50934
+  DGCharts: 1c6daf585b6cfc78807af44ea690d357c410627f
   FirebaseAppCheckInterop: a1955ce8c30f38f87e7d091630e871e91154d65d
   FirebaseAuth: 22eb85d3853141de7062bfabc131aa7d6335cade
   FirebaseCore: 63efb128decaebb04c4033ed4e05fb0bb1cccef1
@@ -1017,6 +1023,6 @@ SPEC CHECKSUMS:
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
   RecaptchaInterop: 7d1a4a01a6b2cb1610a47ef3f85f0c411434cb21
 
-PODFILE CHECKSUM: 560eeefbdb5ad3793707671bf9d1355173943426
+PODFILE CHECKSUM: d5d58699a61a5137eed6bdaf2de5a41695ca6f67
 
 COCOAPODS: 1.15.2

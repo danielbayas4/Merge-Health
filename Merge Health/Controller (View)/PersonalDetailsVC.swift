@@ -1,6 +1,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 class PersonalDetailsVC: UIViewController {
     
@@ -36,6 +37,27 @@ class PersonalDetailsVC: UIViewController {
         } catch let signOutError as NSError {
           print("Error signing out: %@", signOutError)
         }
+    }
+    
+    
+    @IBAction func saveChangesAction(_ sender: Any) {
+        
+        guard let name = nameField.text, !name.isEmpty,
+              let email = mailField.text, !email.isEmpty else {
+            print("There is a problem with name or email")
+            return
+        }
+        
+        UserDataInformation.shared.updateUserData(name: name, email: email) { success in
+            DispatchQueue.main.async {
+                if success {
+                    print("User information  updated succesfully")
+                } else {
+                    print("Failed to update the user data")
+                }
+            }
+        }
+        
     }
     
     @IBAction func eliminateAccountAction(_ sender: Any) {

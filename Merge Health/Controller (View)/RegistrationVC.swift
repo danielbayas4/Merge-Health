@@ -28,6 +28,8 @@ class RegistrationVC: UIViewController, UITextFieldDelegate {
     }
         
     func initialUI(){
+        view.backgroundColor = UIColor(hex: "F0ECE5")
+        
         registerButton.tintColor = UIColor(hex: "161A30")
         
         nameTextField.delegate = self
@@ -74,6 +76,16 @@ class RegistrationVC: UIViewController, UITextFieldDelegate {
                 }
         }
 
+        }
+        
+        UserDataInformation.shared.fetchUserData { success in
+            if success {
+                DispatchQueue.main.async {
+                            //exp: Puedo hacer una modificación de mi UI
+                        }
+                
+            }
+            
         }
     }
     

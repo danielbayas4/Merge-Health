@@ -17,6 +17,10 @@ class RestingHeartRate: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        self.averageHeartRateLabel.text = RestingHeartRateM.shared.today_average
+        self.lastHeartRateLabel.text = RestingHeartRateM.shared.latest_value
+        self.averageLast10.text = RestingHeartRateM.shared.average_last_10_days
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -123,10 +123,15 @@ class LoginVC: UIViewController, UITextFieldDelegate {
             }
         }
         
-        
-        
-        
-        
+        UserDataInformation.shared.fetchUserData { success in
+            if success {
+                DispatchQueue.main.async {
+                            //exp: Puedo hacer una modificación de mi UI
+                        }
+                
+            }
+            
+        }
         
     }
     

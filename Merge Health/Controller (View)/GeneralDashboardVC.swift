@@ -21,6 +21,15 @@ class GeneralDashboardVC: UIViewController {
         initialUI()
     }
     
+    @IBAction func restingHeartRateAction(_ sender: Any) {
+        
+    }
+    
+    @IBAction func stepsAction(_ sender: Any) {
+        
+    }
+    
+    
     func initialUI(){
         view.backgroundColor = UIColor(hex: "F0ECE5")
         restingHeartRateButton.tintColor = UIColor(hex: "161A30")
@@ -38,6 +47,11 @@ class GeneralDashboardVC: UIViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destVC = segue.destination as! IndividualMetricVC
+        destVC.modalPresentationStyle = .fullScreen
+        //exp: send the information that will identify the type of metric choosen
+        
+        
         //Implement it in a form of a table, and do like
                 //let color_ = colors[indexPath.row]
                 
@@ -45,8 +59,6 @@ class GeneralDashboardVC: UIViewController {
                 // performSegue(withIdentifier: "ToColorsDetailVC", sender: color_)
         
         
-        let destVC = segue.destination as! IndividualMetricVC
-        destVC.modalPresentationStyle = .fullScreen
     }
 
 }

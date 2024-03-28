@@ -53,6 +53,8 @@ extension AveragePerWeekVC: UITableViewDataSource {
         
         if cell.weekDay.text == "Monday" {
             cell.progressView.progress = 0.5
+            //Se actualiza de igual manera el
+            //cell.writtenValue = el primer valor del array que vaya a crear
         }
         if cell.weekDay.text == "Tuesday" {
             cell.progressView.progress = 0.2
@@ -63,6 +65,7 @@ extension AveragePerWeekVC: UITableViewDataSource {
         if cell.weekDay.text == "Thursday" {
             cell.progressView.progress = 0.3
         }
+        
         
         return cell
         

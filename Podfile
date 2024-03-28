@@ -13,6 +13,8 @@ target 'Merge Health' do
   pod 'FirebaseFirestore'
   pod 'FirebaseAuth'
   
+  pod 'DGCharts'
+  
   
   target 'Merge HealthTests' do
     inherit! :search_paths

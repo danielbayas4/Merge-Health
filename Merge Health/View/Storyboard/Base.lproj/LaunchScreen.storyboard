@@ -1,9 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="J3h-dC-SlZ">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="lxU-Ff-Z4V">
+            <objects>
+                <viewController id="J3h-dC-SlZ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kEr-pI-l1a">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logaso" translatesAutoresizingMaskIntoConstraints="NO" id="O1i-4d-lPY">
+                                <rect key="frame" x="46.666666666666657" y="276" width="300" height="300"/>
+                                <color key="backgroundColor" red="0.88705134389999996" green="0.98984760049999998" blue="0.96607202290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="5LP-eZ-MtW"/>
+                                    <constraint firstAttribute="height" constant="300" id="wDa-mk-5wo"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FfH-eE-tBH"/>
+                        <color key="backgroundColor" red="0.72425514459999996" green="0.94901353119999998" blue="0.90089762210000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="O1i-4d-lPY" firstAttribute="centerY" secondItem="kEr-pI-l1a" secondAttribute="centerY" id="B5s-cD-hJt"/>
+                            <constraint firstItem="O1i-4d-lPY" firstAttribute="centerX" secondItem="kEr-pI-l1a" secondAttribute="centerX" id="IBp-XL-uXm"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Qe-dY-v9f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-123" y="-46"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logaso" width="858" height="900"/>
+    </resources>
 </document>
