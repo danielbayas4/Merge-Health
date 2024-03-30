@@ -14,5 +14,14 @@ struct todayTVC_Names {
     static let steps = "StepsTVC"
     static let workoutTime = "WorkOutTimeTVC"
     static let walkingRunningDistance = "WalkingRunningDistanceTVC"
-    static let walkingHeartRate = "WalkingHeartRateTVC"
+    static let respiratoryRate = "RespiratoryRateTVC"
+}
+
+struct exposingNames {
+    static let restingHeartRate = "Resting Heart Rate"
+    static let heartRateVariability = "Heart Rate Variability"
+    static let steps = "Steps"
+    static let workoutTime = "Workout Time"
+    static let walkingRunningDistance = "Walking Running Distance"
+    static let respiratoryRate = "Respiratory rate"
 }

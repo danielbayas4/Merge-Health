@@ -5,23 +5,67 @@ import DGCharts
 
 class WorkoutTime: QuantityMetric {
     
-    static let shared = WorkoutTime()
-    private override init() {
-        super.init()
+    var last_workout_length: String
+    var current_total_time: String
+    override var todayTVC_Name: String {
+        return todayTVC_Names.workoutTime
+    }
+    override var exposingName: String {
+        return exposingNames.workoutTime
     }
     
     
-    override var todayTVC_Name: String {
-        return todayTVC_Names.workoutTime
+    static let shared = WorkoutTime()
+    private override init() {
+        last_workout_length = "N/A"
+        current_total_time = "N/A"
+        super.init()
+    }
+    
+    override func fetchAllData() {
+        
+        self.fetchAverageLastDays { _ in
+            
+        }
+        self.fetchExpectedTotalValueUntilNow { _ in
+            
+        }
+        
+        self.fetchSumUntilNow { _ in
+            
+        }
+        
+        self.fetchLastValue { _ in
+            
+        }
+        
+    }
+    
+    override func fetchAverageLastDays(completion: @escaping (String) -> Void) {
+        
     }
 
     override func fetchLastValue(completion: @escaping (String) -> Void) {
         //return "Implementation needed"
     }
     
-    override func fetchAverageToday(completion: @escaping (String) -> Void) {
-        //return "Implementation needed"
+    override func fetchExpectedTotalValueUntilNow(completion: @escaping (String) -> Void) {
+        
     }
+    
+    override func fetchSumUntilNow(completion: @escaping (String) -> Void) {
+        
+    }
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
     
     override func fetchWeeks(completion: @escaping ([Int]) -> Void) {
         

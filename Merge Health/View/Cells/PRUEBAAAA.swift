@@ -1,13 +1,13 @@
 //
-//  WalkingHeartRateTVC.swift
+//  PRUEBAAAA.swift
 //  Merge Health
 //
-//  Created by Daniel Bayas on 28/3/24.
+//  Created by Daniel Bayas on 30/3/24.
 //
 
 import UIKit
 
-class WalkingHeartRateTVC: UITableViewCell {
+class PRUEBAAAA: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

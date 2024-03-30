@@ -14,12 +14,19 @@ class RestingHeartRate: UITableViewCell {
     @IBOutlet var lastHeartRateLabel: UILabel!
     @IBOutlet var averageLast10: UILabel!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        self.backgroundColor = UIColor(hex: "F0ECE5")
+        
+        self.layer.borderColor = UIColor.black.cgColor
+        self.layer.borderWidth = 1.0
+        
         self.averageHeartRateLabel.text = RestingHeartRateM.shared.today_average
         self.lastHeartRateLabel.text = RestingHeartRateM.shared.latest_value
-        self.averageLast10.text = RestingHeartRateM.shared.average_last_10_days
+        self.averageLast10.text = RestingHeartRateM.shared.average_last_days
+        
         
     }
 

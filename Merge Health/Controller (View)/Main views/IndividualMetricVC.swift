@@ -2,6 +2,8 @@ import UIKit
 
 class IndividualMetricVC: UIViewController {
     
+    var individualMetric: QuantityMetric = QuantityMetric()
+    
     //var metric: QuantityMetric = QuantityMetric(name: "")
     
     @IBOutlet var daily: UIButton!
@@ -9,6 +11,8 @@ class IndividualMetricVC: UIViewController {
     @IBOutlet var monthly: UIButton!
     @IBOutlet var yearly: UIButton!
     @IBOutlet var custom: UIButton!
+    
+
     
     
     

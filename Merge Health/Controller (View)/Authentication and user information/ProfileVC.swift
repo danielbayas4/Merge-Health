@@ -50,14 +50,14 @@ class ProfileVC: UIViewController {
                         HKQuantityType(.stepCount),
                         HKCategoryType(.sleepAnalysis),
                         HKQuantityType(.activeEnergyBurned),
+                        HKQuantityType(.heartRateVariabilitySDNN),
+                        HKQuantityType(.respiratoryRate),
+                        HKWorkoutType.workoutType()
                     ]
                     
                     healthStore.requestAuthorization(toShare: [], read: typesToRead) { success, error in
                         if !success {
-                            // Handle the error here.
                             DispatchQueue.main.async {
-                                // Update UI or show an error message to the user.
-                                // Example: self.showAuthorizationError()
                                 
                                 print("Authorization not granted")
                                 self.showHealthDataUnavailableAlert()

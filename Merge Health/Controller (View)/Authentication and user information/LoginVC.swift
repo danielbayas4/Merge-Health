@@ -118,7 +118,9 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                     self!.performSegue(withIdentifier: Segues.toMainServices, sender: self)
                 }
                 
-                guard let strongSelf = self else { return }
+                guard let strongSelf = self 
+                else {
+                    return }
                 
             }
         }

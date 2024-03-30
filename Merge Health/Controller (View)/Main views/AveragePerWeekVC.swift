@@ -3,8 +3,11 @@ import UIKit
 
 class AveragePerWeekVC: UIViewController {
     
+    
+    
     //MARK: - Variables
     var weekDays: [String] = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    var individualMetric: QuantityMetric = QuantityMetric()
     
     //MARK: - Outlets
     
@@ -48,8 +51,12 @@ extension AveragePerWeekVC: UITableViewDataSource {
             fatalError("Cell is not dequed correctly")
         }
         
+        var valuesPerWeekDay: [Int] = individualMetric.valuesPerWeekday
+        var comparedToMaximum = individualMetric.comparedToMaximum
+        
+        
         cell.weekDay.text = weekDays[indexPath.row]
-        cell.writtenValue.text = "Depends on the type of metric"
+        cell.writtenValue.text = "Value: \(valuesPerWeekDay) | Compared to maximum: \(comparedToMaximum)"
         
         if cell.weekDay.text == "Monday" {
             cell.progressView.progress = 0.5

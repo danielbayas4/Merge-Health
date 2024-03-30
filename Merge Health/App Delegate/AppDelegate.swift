@@ -33,7 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         }
         
-        let allMetrics: [QuantityMetric] = [RestingHeartRateM.shared, Steps.shared, WorkoutTime.shared, WalkingRunningDistance.shared, WalkingHeartRate.shared, HeartRateVariability.shared]
+        //let allMetrics: [QuantityMetric] = [RestingHeartRateM.shared, Steps.shared, WorkoutTime.shared, WalkingRunningDistance.shared, RespiratoryRate.shared, HeartRateVariability.shared]
+        let allMetrics: [QuantityMetric] = [RestingHeartRateM.shared, Steps.shared, HeartRateVariability.shared, RespiratoryRate.shared]
         
         for individualMetric in allMetrics {
             individualMetric.fetchAllData()

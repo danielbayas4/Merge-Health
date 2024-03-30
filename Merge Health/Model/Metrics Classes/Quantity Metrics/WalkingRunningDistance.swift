@@ -5,22 +5,34 @@ import DGCharts
 class WalkingRunningDistance: QuantityMetric {
     
     static let shared = WalkingRunningDistance()
+    override var todayTVC_Name: String {
+        return todayTVC_Names.walkingRunningDistance
+    }
+    override var exposingName: String {
+        return exposingNames.walkingRunningDistance
+    }
+    
+    
     private override init() {
         super.init()
     }
     
+    override func fetchAllData() {
+        
+        self.fetchAverageLastDays { _ in
+            
+        }
+        self.fetchExpectedTotalValueUntilNow { _ in
+            
+        }
+        
+        self.fetchSumUntilNow { _ in
+            
+        }
+        
+    }
     
-    override var todayTVC_Name: String {
-        return todayTVC_Names.walkingRunningDistance
-    }
-
-    override func fetchLastValue(completion: @escaping (String) -> Void) {
-        //return "Implementation needed"
-    }
     
-    override func fetchAverageToday(completion: @escaping (String) -> Void) {
-        //return "Implementation needed"
-    }
 
     override func fetchWeeks(completion: @escaping ([Int]) -> Void) {
         

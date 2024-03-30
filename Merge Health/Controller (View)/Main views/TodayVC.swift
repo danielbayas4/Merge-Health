@@ -10,7 +10,7 @@ class TodayVC: UIViewController {
     
    // var quantityMetrics: [QuantityMetric] = [RestingHeartRateM.shared, Steps.shared, WorkoutTime.shared, HeartRateVariability.shared]
     
-    var quantityMetrics: [QuantityMetric] = [RestingHeartRateM.shared]
+    var quantityMetrics: [QuantityMetric] = [RestingHeartRateM.shared, HeartRateVariability.shared, RespiratoryRate.shared, Steps.shared]
 
     
      override func viewDidLoad() {
@@ -24,28 +24,6 @@ class TodayVC: UIViewController {
              tableView.register(UINib(nibName: quantityMetric.todayTVC_Name, bundle: nil), forCellReuseIdentifier: quantityMetric.todayTVC_Name)
          }
      }
-    
-    func getAllAverageToday(completion: @escaping () -> Void) {
-        let group = DispatchGroup()
-        for quantity_metric in quantityMetrics {
-            group.enter()
-            quantity_metric.fetchAverageToday { averageToday in
-                DispatchQueue.main.async {
-                    quantity_metric.today_average = averageToday
-                    group.leave()
-                }
-            }
-            
-        }
-        
-        group.notify(queue: .main) {
-            completion()
-        }
-    }
-    
-    
-
-    
 }
 
 extension TodayVC: UITableViewDelegate {
@@ -58,15 +36,20 @@ extension TodayVC: UITableViewDelegate {
             //Based on the units size in the storyboard
             return 230
         }
+        
+        else if currentMetricTVC == todayTVC_Names.respiratoryRate{
+            return 230
+        }
+                    
         else if currentMetricTVC == todayTVC_Names.steps {
-            
+            return 280
         }
         else if currentMetricTVC == todayTVC_Names.workoutTime {
             
         }
         
         else if currentMetricTVC == todayTVC_Names.heartRateVariability {
-            
+            return 230
         }
         
         return 200
