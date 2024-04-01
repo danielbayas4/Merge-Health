@@ -67,7 +67,6 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     
     @IBAction func rememberMeAction(_ sender: UISwitch) {
         UserDefaults.standard.set(sender.isOn, forKey: "RememberMe")
-        print(sender.isOn)
     }
 
     

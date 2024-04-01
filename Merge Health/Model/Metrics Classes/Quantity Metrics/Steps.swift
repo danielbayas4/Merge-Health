@@ -76,10 +76,6 @@ class Steps: QuantityMetric {
         }
         
         healthStore.execute(query)
-        
-        
-        
-        
     }
     
     
@@ -249,33 +245,42 @@ class Steps: QuantityMetric {
     
     
     
-    override func fetchWeeks(completion: @escaping ([Int]) -> Void) {
+    override func fetchDays(completion: @escaping ([Int], [String], String) -> Void) {
         
+    }
 
-    }
     
-    override func fetchDays(completion: @escaping ([Int]) -> Void) {
-        
-        
+    override func fetchWeeks(completion: @escaping ([Int], [String], String) -> Void){
+        let number_weeks: Int = 10
+        let weekValues = [1]
     }
-    
-    override func fetchMonths(completion: @escaping ([Int]) -> Void){
 
- 
-    }
-    
-    override func barChartWeek() -> BarChartView {
 
-        fatalError("Implementation needed")
+
+    override func fetchMonths(completion: @escaping ([Int], [String], String) -> Void) {
+        let number_monthts: Int = 10
+        let monthValues = [1]
+        
     }
     
-    override func barChartMonth() -> BarChartView {
+    override func fetchYears(completion: @escaping ([Int], [String], String) -> Void){
         
-        fatalError("Implementation needed")
     }
     
-    override func barChartYear() -> BarChartView {
+
+    
+    override func barChartDays(){
+
+        //fatalError("Implementation needed")
+    }
+    
+    override func barChartWeeks(){
         
-        fatalError("Implementation needed")
+        //fatalError("Implementation needed")
+    }
+    
+    override func barChartMonths(){
+        
+        //fatalError("Implementation needed")
     }
 }

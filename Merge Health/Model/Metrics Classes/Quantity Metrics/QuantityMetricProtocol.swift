@@ -15,14 +15,18 @@ protocol QuantityMetricProtocol {
     
     func fetchAverageLastDays(completion: @escaping (String) -> Void)
     
-    func fetchWeeks(completion: @escaping ([Int]) -> Void)
-    func fetchDays(completion: @escaping ([Int]) -> Void)
-    func fetchMonths(completion: @escaping ([Int]) -> Void)
+    func fetchWeeks(completion: @escaping ([Int], [String], String) -> Void)
+    func fetchDays(completion: @escaping ([Int], [String], String) -> Void)
+    func fetchMonths(completion: @escaping ([Int], [String], String) -> Void)
+    func fetchYears(completion: @escaping ([Int], [String], String) -> Void)
+    func fetchCustomDays(userinput: Int, completion: @escaping ([Int], [String], String) -> Void)
+    
     func fetchValuesPerWeekDay(completion: @escaping ([Int]) -> Void)
     
-    func barChartWeek() -> BarChartView
-    func barChartMonth() -> BarChartView
-    func barChartYear() -> BarChartView
+    func barChartDays()
+    func barChartCustomDays(userinput: Int)
+    func barChartWeeks()
+    func barChartMonths()
     
 
     

@@ -55,7 +55,7 @@
                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forecasted average for today (Based on the previous 10 days)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ytn-Xe-NAT">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forecasted average for today (Based on past data)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ytn-Xe-NAT">
                         <rect key="frame" x="10" y="156" width="400" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -72,6 +72,7 @@
                     <constraint firstItem="FFd-tP-RWZ" firstAttribute="bottom" secondItem="BM9-Wf-5IM" secondAttribute="bottom" id="0cF-Ad-yrm"/>
                     <constraint firstItem="95i-tt-l5s" firstAttribute="top" secondItem="Ytn-Xe-NAT" secondAttribute="bottom" constant="10" id="37d-YM-6Tw"/>
                     <constraint firstItem="rwP-gR-IEY" firstAttribute="top" secondItem="Qwa-5A-tOh" secondAttribute="bottom" constant="5" id="3fZ-5q-XcL"/>
+                    <constraint firstAttribute="trailing" secondItem="Ytn-Xe-NAT" secondAttribute="trailing" constant="7" id="Adg-4A-VGw"/>
                     <constraint firstItem="7fA-aa-FjZ" firstAttribute="leading" secondItem="SMq-vU-mu6" secondAttribute="leading" id="AkO-v3-nRh"/>
                     <constraint firstItem="Ytn-Xe-NAT" firstAttribute="leading" secondItem="7fA-aa-FjZ" secondAttribute="leading" id="EgT-kM-2Wy"/>
                     <constraint firstItem="BM9-Wf-5IM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="HQV-RN-sLO"/>
@@ -99,6 +100,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="heart.fill" catalog="system" width="32" height="32"/>
+        <image name="heart.fill" catalog="system" width="128" height="107"/>
     </resources>
 </document>

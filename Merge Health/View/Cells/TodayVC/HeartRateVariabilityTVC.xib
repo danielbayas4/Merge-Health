@@ -55,7 +55,7 @@
                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forecasted average for today (Based on the previous 10 days)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HfA-DD-kQ3">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forecasted average for today (Based on past data)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HfA-DD-kQ3">
                         <rect key="frame" x="10" y="156" width="400" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -77,6 +77,7 @@
                     <constraint firstItem="MKg-9w-bju" firstAttribute="top" secondItem="93W-lc-EHb" secondAttribute="top" id="NP6-dt-xNj"/>
                     <constraint firstItem="MKg-9w-bju" firstAttribute="bottom" secondItem="93W-lc-EHb" secondAttribute="bottom" id="OjM-G8-lJ7"/>
                     <constraint firstItem="HfA-DD-kQ3" firstAttribute="leading" secondItem="g2X-ZS-xo2" secondAttribute="leading" id="YJA-ts-kjo"/>
+                    <constraint firstAttribute="trailing" secondItem="HfA-DD-kQ3" secondAttribute="trailing" constant="7" id="ZGR-WW-O1T"/>
                     <constraint firstAttribute="trailing" secondItem="MKg-9w-bju" secondAttribute="trailing" constant="5" id="Znb-bF-EoX"/>
                     <constraint firstItem="QSa-NH-Co0" firstAttribute="top" secondItem="7Xj-Ak-slu" secondAttribute="bottom" constant="10" id="Zza-fg-9BD"/>
                     <constraint firstItem="g2X-ZS-xo2" firstAttribute="leading" secondItem="QSa-NH-Co0" secondAttribute="leading" id="bl1-dn-EdM"/>
@@ -99,6 +100,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="heart.fill" catalog="system" width="32" height="32"/>
+        <image name="heart.fill" catalog="system" width="128" height="107"/>
     </resources>
 </document>

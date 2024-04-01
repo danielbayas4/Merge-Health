@@ -1,21 +1,124 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="WalkingRunningDistanceTVC" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="358" id="j8b-Qg-8px" customClass="WalkingRunningDistanceTVC" customModule="Merge_Health" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="417" height="358"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j8b-Qg-8px" id="idQ-zT-3fy">
+                <rect key="frame" x="0.0" y="0.0" width="417" height="358"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Travelled distance (Running and walking)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYY-lR-3Ui">
+                        <rect key="frame" x="45" y="10" width="367" height="25"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <color key="textColor" systemColor="tableCellBlueTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="road.lanes" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="NwV-aX-Yb6">
+                        <rect key="frame" x="10" y="12.999999999999998" width="30" height="19.333333333333329"/>
+                        <color key="tintColor" systemColor="tableCellBlueTextColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="7xu-2V-n7i"/>
+                            <constraint firstAttribute="width" constant="30" id="jsd-Gq-bcd"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps until now" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Hh-Aw-RoE">
+                        <rect key="frame" x="10" y="45" width="99" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="valueUntilNow" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q9R-5M-2mu">
+                        <rect key="frame" x="10" y="67" width="110" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last walking session" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtO-d1-zHV">
+                        <rect key="frame" x="10" y="98" width="133" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lastWalkingSession" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PoZ-3w-pbE">
+                        <rect key="frame" x="10" y="125" width="147" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="generallyUntilNow" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6r-0i-Wk7">
+                        <rect key="frame" x="10" y="183" width="139" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Generally the steps you do until now" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1TA-gf-pl1">
+                        <rect key="frame" x="10" y="156" width="235" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forecasted steps for the end of your day (23:45)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3y-Z5-sRp">
+                        <rect key="frame" x="10" y="214" width="315" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="forecastedEndDay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87h-0E-Q2A">
+                        <rect key="frame" x="10" y="241" width="140" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="1TA-gf-pl1" firstAttribute="top" secondItem="PoZ-3w-pbE" secondAttribute="bottom" constant="10" id="04k-to-OQM"/>
+                    <constraint firstItem="87h-0E-Q2A" firstAttribute="top" secondItem="K3y-Z5-sRp" secondAttribute="bottom" constant="10" id="06Q-If-yNF"/>
+                    <constraint firstAttribute="trailing" secondItem="DYY-lR-3Ui" secondAttribute="trailing" constant="5" id="2S8-w6-7Hd"/>
+                    <constraint firstItem="1TA-gf-pl1" firstAttribute="leading" secondItem="PoZ-3w-pbE" secondAttribute="leading" id="2Zk-8J-ACI"/>
+                    <constraint firstItem="K3y-Z5-sRp" firstAttribute="top" secondItem="Y6r-0i-Wk7" secondAttribute="bottom" constant="10" id="2wR-f2-Ddv"/>
+                    <constraint firstItem="87h-0E-Q2A" firstAttribute="leading" secondItem="K3y-Z5-sRp" secondAttribute="leading" id="9VI-bR-Q87"/>
+                    <constraint firstItem="DYY-lR-3Ui" firstAttribute="leading" secondItem="NwV-aX-Yb6" secondAttribute="trailing" constant="5" id="A6k-NU-EDf"/>
+                    <constraint firstItem="3Hh-Aw-RoE" firstAttribute="top" secondItem="DYY-lR-3Ui" secondAttribute="bottom" constant="10" id="AEd-tK-h88"/>
+                    <constraint firstItem="NwV-aX-Yb6" firstAttribute="leading" secondItem="idQ-zT-3fy" secondAttribute="leading" constant="10" id="K0f-xV-vfj"/>
+                    <constraint firstItem="3Hh-Aw-RoE" firstAttribute="leading" secondItem="NwV-aX-Yb6" secondAttribute="leading" id="Ks5-dD-on5"/>
+                    <constraint firstItem="PoZ-3w-pbE" firstAttribute="leading" secondItem="wtO-d1-zHV" secondAttribute="leading" id="Ppv-wM-k1w"/>
+                    <constraint firstItem="q9R-5M-2mu" firstAttribute="leading" secondItem="3Hh-Aw-RoE" secondAttribute="leading" id="Uex-aL-HP0"/>
+                    <constraint firstItem="NwV-aX-Yb6" firstAttribute="top" secondItem="idQ-zT-3fy" secondAttribute="top" constant="10" id="dCd-CK-W3d"/>
+                    <constraint firstItem="wtO-d1-zHV" firstAttribute="top" secondItem="q9R-5M-2mu" secondAttribute="bottom" constant="10" id="flw-2V-9xk"/>
+                    <constraint firstItem="K3y-Z5-sRp" firstAttribute="leading" secondItem="Y6r-0i-Wk7" secondAttribute="leading" id="hST-jK-gq1"/>
+                    <constraint firstItem="Y6r-0i-Wk7" firstAttribute="leading" secondItem="1TA-gf-pl1" secondAttribute="leading" id="kiB-Vf-0yO"/>
+                    <constraint firstItem="DYY-lR-3Ui" firstAttribute="top" secondItem="NwV-aX-Yb6" secondAttribute="top" id="mFV-Je-xfl"/>
+                    <constraint firstItem="PoZ-3w-pbE" firstAttribute="top" secondItem="wtO-d1-zHV" secondAttribute="bottom" constant="10" id="mXC-nM-S72"/>
+                    <constraint firstItem="Y6r-0i-Wk7" firstAttribute="top" secondItem="1TA-gf-pl1" secondAttribute="bottom" constant="10" id="mzH-xF-1Jk"/>
+                    <constraint firstItem="wtO-d1-zHV" firstAttribute="leading" secondItem="q9R-5M-2mu" secondAttribute="leading" id="oqs-Pr-68p"/>
+                    <constraint firstItem="DYY-lR-3Ui" firstAttribute="bottom" secondItem="NwV-aX-Yb6" secondAttribute="bottom" id="rhp-M1-uBM"/>
+                    <constraint firstItem="q9R-5M-2mu" firstAttribute="top" secondItem="3Hh-Aw-RoE" secondAttribute="bottom" constant="5" id="zun-vc-jbC"/>
+                </constraints>
             </tableViewCellContentView>
-            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <viewLayoutGuide key="safeArea" id="FZk-O9-lm3"/>
+            <connections>
+                <outlet property="forecastedEndDay" destination="87h-0E-Q2A" id="cLv-pq-piZ"/>
+                <outlet property="generallyUntilNow" destination="Y6r-0i-Wk7" id="Acq-0w-3jG"/>
+                <outlet property="lastSession" destination="PoZ-3w-pbE" id="Sn3-9V-e65"/>
+                <outlet property="sumUntilNow" destination="q9R-5M-2mu" id="omN-VV-kHw"/>
+            </connections>
+            <point key="canvasLocation" x="-199.23664122137404" y="-185.21126760563382"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="road.lanes" catalog="system" width="128" height="66"/>
+        <systemColor name="tableCellBlueTextColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

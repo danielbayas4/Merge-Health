@@ -33,10 +33,6 @@ class ProfileVC: UIViewController {
         if let currentUser = UserDataInformation.shared.currentUser {
             nameLabel.text = currentUser.name
         }
-        
-        
-        
-        
     }
 
     
@@ -52,19 +48,24 @@ class ProfileVC: UIViewController {
                         HKQuantityType(.activeEnergyBurned),
                         HKQuantityType(.heartRateVariabilitySDNN),
                         HKQuantityType(.respiratoryRate),
-                        HKWorkoutType.workoutType()
+                        HKWorkoutType.workoutType(),
+                        HKQuantityType(.distanceWalkingRunning)
                     ]
                     
                     healthStore.requestAuthorization(toShare: [], read: typesToRead) { success, error in
                         if !success {
                             DispatchQueue.main.async {
-                                
+                                UserDefaults.standard.set(false, forKey: "authorization_granted")
                                 print("Authorization not granted")
                                 self.showHealthDataUnavailableAlert()
                             }
                         } else {
                             DispatchQueue.main.async {
                                 print("Authorization granted")
+                                
+                                //User Defaults
+                                
+                                UserDefaults.standard.set(true, forKey: "authorization_granted")
                                 
                                 if let userID = Auth.auth().currentUser?.uid {
                                     let db = Firestore.firestore()

@@ -56,7 +56,7 @@
                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forecasted average for today (Based on the previous 10 days)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vo-p3-Bly">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forecasted average for today (Based on past data)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vo-p3-Bly">
                         <rect key="frame" x="10" y="156" width="400" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -80,6 +80,7 @@
                     <constraint firstItem="sZv-LH-2Wj" firstAttribute="leading" secondItem="gch-Cq-TQm" secondAttribute="leading" id="QZI-7n-Dw3"/>
                     <constraint firstItem="kfD-9p-tep" firstAttribute="leading" secondItem="d2c-fg-NvS" secondAttribute="leading" id="ZTU-la-d6U"/>
                     <constraint firstItem="0fp-3u-6fr" firstAttribute="top" secondItem="9vo-p3-Bly" secondAttribute="bottom" constant="10" id="Zln-hQ-ubJ"/>
+                    <constraint firstAttribute="trailing" secondItem="9vo-p3-Bly" secondAttribute="trailing" constant="7" id="auj-EF-VQL"/>
                     <constraint firstAttribute="trailing" secondItem="H3M-KK-WYt" secondAttribute="trailing" constant="5" id="f41-Jc-ktM"/>
                     <constraint firstItem="H3M-KK-WYt" firstAttribute="top" secondItem="d2c-fg-NvS" secondAttribute="top" id="gFw-b8-2vr"/>
                     <constraint firstItem="d2c-fg-NvS" firstAttribute="leading" secondItem="IDe-DM-Tpg" secondAttribute="leading" constant="10" id="hQq-7s-Jt3"/>
@@ -92,12 +93,9 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="3a2-dh-Nss"/>
             <connections>
-                <outlet property="averageHeartRateLabel" destination="gch-Cq-TQm" id="n1A-Jn-tT0"/>
-                <outlet property="averageLast10" destination="0fp-3u-6fr" id="Afu-RE-sow"/>
-                <outlet property="averageValue" destination="gch-Cq-TQm" id="2KG-3V-Hqe"/>
-                <outlet property="forecastedAverageToday" destination="0fp-3u-6fr" id="VpL-0R-7sY"/>
-                <outlet property="lastHeartRateLabel" destination="0hx-cj-zu9" id="e8O-ad-NyO"/>
-                <outlet property="lastValue" destination="0hx-cj-zu9" id="n0M-1S-ohy"/>
+                <outlet property="averageValue" destination="gch-Cq-TQm" id="mjn-0h-I0p"/>
+                <outlet property="forecastedAverageToday" destination="0fp-3u-6fr" id="fMY-xQ-YwW"/>
+                <outlet property="lastValue" destination="0hx-cj-zu9" id="vga-0C-JKR"/>
             </connections>
             <point key="canvasLocation" x="-102" y="-19"/>
         </tableViewCell>
@@ -105,7 +103,7 @@
     <resources>
         <image name="lungs" catalog="system" width="128" height="89"/>
         <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

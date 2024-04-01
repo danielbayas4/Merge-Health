@@ -8,9 +8,9 @@ class TodayVC: UIViewController {
     
     let healthStore = HKHealthStore()
     
-   // var quantityMetrics: [QuantityMetric] = [RestingHeartRateM.shared, Steps.shared, WorkoutTime.shared, HeartRateVariability.shared]
     
-    var quantityMetrics: [QuantityMetric] = [RestingHeartRateM.shared, HeartRateVariability.shared, RespiratoryRate.shared, Steps.shared]
+    
+    var quantityMetrics: [QuantityMetric] = [RestingHeartRateM.shared, HeartRateVariability.shared, RespiratoryRate.shared, Steps.shared, WalkingRunningDistance.shared]
 
     
      override func viewDidLoad() {
@@ -23,7 +23,35 @@ class TodayVC: UIViewController {
              quantityMetric.fetchAllData()
              tableView.register(UINib(nibName: quantityMetric.todayTVC_Name, bundle: nil), forCellReuseIdentifier: quantityMetric.todayTVC_Name)
          }
+         
+         self.navigationItem.rightBarButtonItem = self.editButtonItem
      }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        self.tableView.setEditing(editing, animated: animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        for quantityMetric in quantityMetrics {
+            quantityMetric.fetchAllData()
+        }
+        
+        self.tableView.reloadData()
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        for quantityMetric in quantityMetrics {
+            quantityMetric.fetchAllData()
+        }
+        
+        self.tableView.reloadData()
+    }
 }
 
 extension TodayVC: UITableViewDelegate {
@@ -37,11 +65,11 @@ extension TodayVC: UITableViewDelegate {
             return 230
         }
         
-        else if currentMetricTVC == todayTVC_Names.respiratoryRate{
+        else if currentMetricTVC == todayTVC_Names.respiratoryRate {
             return 230
         }
                     
-        else if currentMetricTVC == todayTVC_Names.steps {
+        else if currentMetricTVC == todayTVC_Names.steps || currentMetricTVC == todayTVC_Names.walkingRunningDistance {
             return 280
         }
         else if currentMetricTVC == todayTVC_Names.workoutTime {
@@ -64,9 +92,29 @@ extension TodayVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        let authorizationGranted = UserDefaults.standard.bool(forKey: "authorization_granted")
+        
+        guard authorizationGranted == true else {
+            let cell = UITableViewCell()
+            return cell
+        }
         
         let quantityMetric = quantityMetrics[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: quantityMetric.todayTVC_Name, for: indexPath)
         return cell
+        
+
     }
+    
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+           return true
+       }
+       
+       func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+           // Update your data model array here
+           let movedObject = self.quantityMetrics[sourceIndexPath.row]
+           quantityMetrics.remove(at: sourceIndexPath.row)
+           quantityMetrics.insert(movedObject, at: destinationIndexPath.row)
+       }
 }

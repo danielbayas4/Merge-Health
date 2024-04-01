@@ -12,6 +12,7 @@ class dayBarTVC: UITableViewCell {
         progressView.progressViewStyle = .bar
         progressView.trackTintColor = .gray
         progressView.progressTintColor = UIColor(hex: "161A30")
+        self.backgroundColor = UIColor(hex: "F0ECE5")
         
         progressView.transform = progressView.transform.scaledBy(x: 1, y: 16)
         

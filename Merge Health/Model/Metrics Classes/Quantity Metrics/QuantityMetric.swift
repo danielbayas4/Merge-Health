@@ -13,6 +13,7 @@ import DGCharts
 
 class QuantityMetric: QuantityMetricProtocol {
     
+    
     //Actual part of the super class
     public var healthStore = HKHealthStore()
     public var todayTVC_Name: String {
@@ -42,10 +43,16 @@ class QuantityMetric: QuantityMetricProtocol {
     public var valuesPerWeekday: [Int]
     public var comparedToMaximum: [String] //Instance: 56%
     
-    //For the graphing
-    public var lastNDays: [Int]
-    public var lastNWeeks: [Int]
-    public var lastNMonths: [Int]
+    //Graphs
+    public var dailyBarChart: BarChartView
+    public var dailyCustomBarChart: BarChartView
+    
+    public var weeklyBarChart: BarChartView
+    public var monthlyBarChart: BarChartView
+    public var yearsBarChart: BarChartView
+    
+    public var customValues: [Int]
+    
     
     
 
@@ -67,33 +74,54 @@ class QuantityMetric: QuantityMetricProtocol {
         self.valuesPerWeekday = []
         self.comparedToMaximum = []
         
-        //For the graphing
-        self.lastNDays = []
-        self.lastNWeeks = []
-        self.lastNMonths = []
+        self.dailyBarChart = BarChartView()
+        self.weeklyBarChart = BarChartView()
+        self.monthlyBarChart = BarChartView()
+        self.yearsBarChart = BarChartView()
+        self.dailyCustomBarChart = BarChartView()
         
-
+        self.customValues = []
+        
     }
     
     
     
     func fetchAllData() -> Void {
+        self.fetchLastValue { _ in
+            
+        }
         
-//        self.fetchWeeks { _ in
-//            
-//        }
-//        
-//        self.fetchMonths { _ in
-//            
-//        }
-//        
-//        self.fetchDays { _ in
-//            
-//        }
-//        
-//        self.fetchValuesPerWeekDay { _ in
-//
-//        }
+        self.fetchAverageToday { _ in
+            
+        }
+        
+        self.fetchAverageLastDays { _ in
+            
+        }
+        
+        self.fetchDays { _, _, _ in
+            
+        }
+        
+        self.fetchWeeks { _, _, _ in
+            
+        }
+        
+        self.fetchMonths { _, _ , _ in
+            
+        }
+        
+        self.fetchYears { _, _, _ in
+            
+        }
+        
+        self.barChartDays()
+        
+        self.barChartWeeks()
+        
+        self.barChartMonths()
+        
+        self.barChartYears()
         
     }
     
@@ -117,28 +145,57 @@ class QuantityMetric: QuantityMetricProtocol {
     
 
     
-    func fetchWeeks(completion: @escaping ([Int]) -> Void) {
+    
+    
+    
+    
+    
+    func fetchDays(completion: @escaping ([Int], [String], String) -> Void) {
         fatalError("The method must be overriden")
     }
-    func fetchDays(completion: @escaping ([Int]) -> Void) {
+    
+    func fetchCustomDays(userinput: Int, completion: @escaping ([Int], [String], String) -> Void) {
+        fatalError("Must be overwritten")
+    }
+    
+    
+    func fetchWeeks(completion: @escaping ([Int], [String], String) -> Void) {
         fatalError("The method must be overriden")
     }
-    func fetchMonths(completion: @escaping ([Int]) -> Void) {
+
+    func fetchMonths(completion: @escaping ([Int], [String], String) -> Void) {
         fatalError("The method must be overriden")
     }
+    
+    func fetchYears(completion: @escaping ([Int], [String], String) -> Void) {
+        
+    }
+    
     //.
     func fetchValuesPerWeekDay(completion: @escaping ([Int]) -> Void) {
         fatalError("The method must be overriden")
     }
     
     
-    func barChartWeek() -> BarChartView {
+    
+    
+    func barChartDays(){
+        fatalError("The method must be overriden")
+        
+    }
+    
+    func barChartCustomDays(userinput: Int) {
+        fatalError("Must be overwritten")
+    }
+    
+    func barChartWeeks() {
         fatalError("The method must be overriden")
     }
-    func barChartMonth() -> BarChartView {
+    func barChartMonths(){
         fatalError("The method must be overriden")
     }
-    func barChartYear() -> BarChartView {
+    
+    func barChartYears(){
         fatalError("The method must be overriden")
     }
 

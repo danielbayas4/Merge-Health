@@ -21,17 +21,7 @@ class HeartRateVariability: QuantityMetric {
     }
     
     override func fetchAllData() {
-        self.fetchLastValue { _ in
-            
-        }
-        
-        self.fetchAverageToday { _ in
-            
-        }
-        
-        self.fetchAverageLastDays { _ in
-            
-        }
+        super.fetchAllData()
     }
     
     
@@ -53,8 +43,6 @@ class HeartRateVariability: QuantityMetric {
         
         let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
         
-        
-        //The most recent HRV value
         let query = HKSampleQuery(sampleType: metric, predicate: predicate, limit: 1, sortDescriptors: [sortDescriptor]) { (query, results, error) in
             guard error == nil else {
                 completion("N/A")
@@ -74,7 +62,7 @@ class HeartRateVariability: QuantityMetric {
         }
         
         healthStore.execute(query)
-    } //working
+    }
     
     override func fetchAverageToday(completion: @escaping (String) -> Void) {
         
@@ -125,7 +113,7 @@ class HeartRateVariability: QuantityMetric {
         let endDate = Date()
         guard let startDate = calendar.date(byAdding: .day, value: daysLength, to: endDate) else { return }
 
-        // Defining the cumulative sum
+
         let statisticsOptions = HKStatisticsOptions.discreteAverage
 
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictStartDate)
@@ -156,7 +144,7 @@ class HeartRateVariability: QuantityMetric {
             
             
 
-            // For loop per each of the metrics
+
             statsCollection.enumerateStatistics(from: startDate, to: endDate) { individualDay, stop in
                 if let quantity = individualDay.averageQuantity() {
                     let value = quantity.doubleValue(for: HKUnit(from: "ms"))
@@ -178,38 +166,157 @@ class HeartRateVariability: QuantityMetric {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    override func fetchDays(completion: @escaping ([Int]) -> Void) {
-        
-        
+    override func fetchDays(completion: @escaping ([Int], [String], String) -> Void) {
+        guard let heartRateVariabilityType = HKQuantityType.quantityType(forIdentifier: .heartRateVariabilitySDNN) else {
+            print("Heart Rate Variability Type is not available in HealthKit")
+            return
+        }
+
+        let daysLength = -25
+
+        var dayXLabels: [String] = []
+        var hrvValues: [Int] = []
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yy"
+
+        guard HKHealthStore.isHealthDataAvailable() else {
+            print("Health data not available")
+            return
+        }
+
+        let calendar = Calendar.current
+        let endDate = Date()
+        guard let startDate = calendar.date(byAdding: .day, value: daysLength, to: endDate) else { return }
+
+        let statisticsOptions = HKStatisticsOptions.discreteAverage
+
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictStartDate)
+
+        let query = HKStatisticsCollectionQuery(
+            quantityType: heartRateVariabilityType,
+            quantitySamplePredicate: predicate,
+            options: statisticsOptions,
+            anchorDate: startDate,
+            intervalComponents: DateComponents(day: 1)
+        )
+
+        query.initialResultsHandler = { query, results, error in
+            if error != nil {
+                completion([], [], "There was an error trying to fetch the data")
+                return
+            }
+
+            guard let statsCollection = results else {
+                dayXLabels = ["N/A"]
+                hrvValues = [-1, -1]
+                completion([], [], "N/A")
+                return
+            }
+
+            statsCollection.enumerateStatistics(from: startDate, to: endDate) { statistic, stop in
+                if let quantity = statistic.averageQuantity() {
+                    let date = statistic.startDate
+                    let value = quantity.doubleValue(for: HKUnit(from: "ms"))
+                    hrvValues.append(Int(value))
+
+                    let dateString = dateFormatter.string(from: date)
+                    dayXLabels.append(dateString)
+                }
+            }
+
+            completion(hrvValues, dayXLabels, "No error")
+        }
+
+        healthStore.execute(query)
+    }
+
+    override func barChartDays() {
+        let chartView = BarChartView()
+
+        var xLabels: [String] = []
+        var values: [Int] = []
+
+        fetchDays { values_, dates, error in
+            xLabels = dates
+            values = values_
+
+            let dataSetLabel = "HRV (ms)"
+
+            var dataEntries: [BarChartDataEntry] = []
+
+            for i in 0..<values.count {
+                let dataEntry = BarChartDataEntry(x: Double(i), y: Double(values[i]))
+                dataEntries.append(dataEntry)
+            }
+
+            let chartDataSet = BarChartDataSet(entries: dataEntries, label: dataSetLabel)
+
+            
+            let colors: [UIColor] = values.map { value in
+                switch value {
+                case 0..<30:
+                    return UIColor.blue
+                case 30..<60:
+                    return UIColor.green
+                default:
+                    return UIColor.red
+                }
+            }
+
+            chartDataSet.colors = colors
+
+            let chartData = BarChartData(dataSet: chartDataSet)
+
+            chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: xLabels)
+            chartView.data = chartData
+            chartView.xAxis.labelCount = xLabels.count
+
+            DispatchQueue.main.async {
+                self.dailyBarChart = chartView
+            }
+        }
     }
     
-    override func fetchWeeks(completion: @escaping ([Int]) -> Void) {
-        
-
-    }
     
-    override func fetchMonths(completion: @escaping ([Int]) -> Void){
-
+    
+    
+    
+    
+    
+    
  
+
+    
+    override func fetchWeeks(completion: @escaping ([Int], [String], String) -> Void){
+        let number_weeks: Int = 10
+        let weekValues = [1]
     }
 
-    override func barChartWeek() -> BarChartView {
-        fatalError("Implementation needed")
+
+
+    override func fetchMonths(completion: @escaping ([Int], [String], String) -> Void) {
+        let number_monthts: Int = 10
+        let monthValues = [1]
+        
+    }
+    
+    override func fetchYears(completion: @escaping ([Int], [String], String) -> Void){
+        
     }
 
-    override func barChartMonth() -> BarChartView {
-        fatalError("Implementation needed")
+
+
+    override func barChartWeeks() {
+        //fatalError("Implementation needed")
     }
 
-    override func barChartYear() -> BarChartView {
-        fatalError("Implementation needed")
+    override func barChartMonths() {
+        //fatalError("Implementation needed")
+    }
+    
+    override func barChartYears() {
+        
     }
 }
 

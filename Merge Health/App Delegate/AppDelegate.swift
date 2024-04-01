@@ -27,14 +27,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UserDataInformation.shared.fetchUserData { success in
             if success {
                 DispatchQueue.main.async {
-                            //exp: Puedo hacer una modificación de mi UI
+                    
                         }
             }
             
         }
         
         //let allMetrics: [QuantityMetric] = [RestingHeartRateM.shared, Steps.shared, WorkoutTime.shared, WalkingRunningDistance.shared, RespiratoryRate.shared, HeartRateVariability.shared]
-        let allMetrics: [QuantityMetric] = [RestingHeartRateM.shared, Steps.shared, HeartRateVariability.shared, RespiratoryRate.shared]
+        let allMetrics: [QuantityMetric] = [RestingHeartRateM.shared, Steps.shared, HeartRateVariability.shared, RespiratoryRate.shared, WalkingRunningDistance.shared]
         
         for individualMetric in allMetrics {
             individualMetric.fetchAllData()

@@ -67,30 +67,39 @@ class WorkoutTime: QuantityMetric {
     
     
     
-    override func fetchWeeks(completion: @escaping ([Int]) -> Void) {
+    override func fetchDays(completion: @escaping ([Int], [String], String) -> Void) {
         
+    }
 
-    }
     
-    override func fetchDays(completion: @escaping ([Int]) -> Void) {
-        
-        
+    override func fetchWeeks(completion: @escaping ([Int], [String], String) -> Void){
+        let number_weeks: Int = 10
+        let weekValues = [1]
     }
-    
-    override func fetchMonths(completion: @escaping ([Int]) -> Void){
 
- 
+
+
+    override func fetchMonths(completion: @escaping ([Int], [String], String) -> Void) {
+        let number_monthts: Int = 10
+        let monthValues = [1]
+        
     }
     
-    override func barChartWeek() -> BarChartView {
-        fatalError("Implementation needed")
+    override func fetchYears(completion: @escaping ([Int], [String], String) -> Void){
+        
     }
     
-    override func barChartMonth() -> BarChartView {
-        fatalError("Implementation needed")
+
+    
+    override func barChartDays() {
+        //fatalError("Implementation needed")
     }
     
-    override func barChartYear() -> BarChartView {
-        fatalError("Implementation needed")
+    override func barChartWeeks()  {
+        //fatalError("Implementation needed")
+    }
+    
+    override func barChartMonths() {
+        //fatalError("Implementation needed")
     }
 }
