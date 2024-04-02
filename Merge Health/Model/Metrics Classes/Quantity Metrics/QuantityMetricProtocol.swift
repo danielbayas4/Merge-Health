@@ -9,12 +9,8 @@ import Foundation
 import DGCharts
 
 protocol QuantityMetricProtocol {
-    //func fetchLastValue(completion: @escaping (String) -> Void)
-    //func fetchAverageToday(completion: @escaping (String) -> Void)
     
-    
-    func fetchAverageLastDays(completion: @escaping (String) -> Void)
-    
+func fetchSpecificWeekDay(pastDays: Int, weekDay: Int, completion: @escaping (Int, String) -> Void)
     func fetchWeeks(completion: @escaping ([Int], [String], String) -> Void)
     func fetchDays(completion: @escaping ([Int], [String], String) -> Void)
     func fetchMonths(completion: @escaping ([Int], [String], String) -> Void)
@@ -27,7 +23,4 @@ protocol QuantityMetricProtocol {
     func barChartCustomDays(userinput: Int)
     func barChartWeeks()
     func barChartMonths()
-    
-
-    
 }

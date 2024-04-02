@@ -31,7 +31,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         
         initialUI()
         
-        appTitleLabel.text = "Merge Health!"
+        appTitleLabel.text = "Merge Health"
         
         emailTextField.delegate = self
         passwordTextField.delegate = self

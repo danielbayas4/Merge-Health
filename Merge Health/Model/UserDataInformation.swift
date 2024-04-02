@@ -12,6 +12,7 @@ import FirebaseAuth
 struct User {
     var name: String
     var email: String
+    var age: Int
 }
 
 
@@ -44,7 +45,8 @@ class UserDataInformation {
                 let data = document.data()
                 let name = data?["name"] as? String ?? ""
                 let email = data?["email"] as? String ?? ""
-                self.currentUser = User(name: name, email: email)
+                let age = data?["age"] as? Int ?? -1
+                self.currentUser = User(name: name, email: email, age: age)
                 completion(true)
         }
             else {
@@ -52,10 +54,6 @@ class UserDataInformation {
                 completion(false)
             }
         }
-        
-        
-        
-        
     }
     
     
@@ -63,7 +61,7 @@ class UserDataInformation {
     
     
     
-    func updateUserData(name: String, email: String, completion: @escaping (Bool) -> Void){
+    func updateUserData(name: String, email: String, age: Int, completion: @escaping (Bool) -> Void){
         guard let user = Auth.auth().currentUser else {
             print("There is no user logged in")
             completion(false)
@@ -80,7 +78,7 @@ class UserDataInformation {
                 completion(false)
             } else {
                 print("Document succesfully updated")
-                self.currentUser = User(name: name, email: email)
+                self.currentUser = User(name: name, email: email, age: age)
                 completion(true)
             }
         }

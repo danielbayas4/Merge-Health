@@ -24,9 +24,7 @@ class WorkoutTime: QuantityMetric {
     
     override func fetchAllData() {
         
-        self.fetchAverageLastDays { _ in
-            
-        }
+
         self.fetchExpectedTotalValueUntilNow { _ in
             
         }
@@ -35,18 +33,8 @@ class WorkoutTime: QuantityMetric {
             
         }
         
-        self.fetchLastValue { _ in
-            
-        }
-        
-    }
-    
-    override func fetchAverageLastDays(completion: @escaping (String) -> Void) {
-        
-    }
 
-    override func fetchLastValue(completion: @escaping (String) -> Void) {
-        //return "Implementation needed"
+        
     }
     
     override func fetchExpectedTotalValueUntilNow(completion: @escaping (String) -> Void) {

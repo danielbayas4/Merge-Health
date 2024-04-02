@@ -7,6 +7,7 @@ class PersonalDetailsVC: UIViewController {
     
     @IBOutlet var nameField: UITextField!
     @IBOutlet var mailField: UITextField!
+    @IBOutlet var ageField: UITextField!
     
     @IBOutlet var saveChanges: UIButton!
     @IBOutlet var logOutButton: UIButton!
@@ -21,8 +22,11 @@ class PersonalDetailsVC: UIViewController {
         eliminateAccountButton.tintColor = UIColor(hex: "161A30")
         
         if let currentUser = UserDataInformation.shared.currentUser {
+            let StringAge = String(currentUser.age)
+            
             nameField.text = currentUser.name
             mailField.text = currentUser.email
+            ageField.text = StringAge
         }
     }
     
@@ -43,12 +47,17 @@ class PersonalDetailsVC: UIViewController {
     @IBAction func saveChangesAction(_ sender: Any) {
         
         guard let name = nameField.text, !name.isEmpty,
-              let email = mailField.text, !email.isEmpty else {
+              let email = mailField.text, !email.isEmpty,
+              let ageString = ageField.text, !ageString.isEmpty,
+              let age = Int(ageString)
+        
+        else {
             print("There is a problem with name or email")
             return
         }
         
-        UserDataInformation.shared.updateUserData(name: name, email: email) { success in
+        UserDataInformation.shared.updateUserData(name: name, email: email, age: age) { success in
+            
             DispatchQueue.main.async {
                 if success {
                     print("User information  updated succesfully")
@@ -61,32 +70,45 @@ class PersonalDetailsVC: UIViewController {
     }
     
     @IBAction func eliminateAccountAction(_ sender: Any) {
-        // Check if the user is signed in
+        
         guard let user = Auth.auth().currentUser else {
-            print("No user is currently signed in.")
-            return
-        }
-        
-        
-        user.delete { error in
-            if let error = error {
-                
-                print("Error in deleting account: \(error.localizedDescription)")
-                
-            } else {
-                
-                print("User account deleted successfully.")
-                
-                // Optional: Sign out the user after account deletion
-                do {
-                    try Auth.auth().signOut()
-                    // Navigate to login or any other appropriate screen
-                    self.performSegue(withIdentifier: "logOutToLogIn", sender: self)
-                } catch let signOutError as NSError {
-                    print("Error signing out after account deletion: %@", signOutError)
+                print("No user is currently signed in.")
+                return
+            }
+            
+            let db = Firestore.firestore()
+            
+            db.collection("users").document(user.uid).delete { error in
+                if let error = error {
+                    print("Error removing user document: \(error.localizedDescription)")
+                } else {
+
+                    print("User document successfully removed!")
+                    
+                    user.delete { error in
+                        if let error = error {
+
+                            print("Error in deleting account: \(error.localizedDescription)")
+                        } else {
+
+                            print("User account deleted successfully.")
+                            
+
+                            do {
+                                try Auth.auth().signOut()
+                                
+                                self.performSegue(withIdentifier: "logOutToLogIn", sender: self)
+                            } catch let signOutError as NSError {
+
+                                print("Error signing out after account deletion: \(signOutError)")
+                            }
+                        }
+                    }
                 }
             }
-        }
+        
+        
+        
     }
     
     

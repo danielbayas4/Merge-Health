@@ -13,8 +13,7 @@ class AveragePerWeekVC: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
-    
-    //tableView.register(UINib(nibName: "dayBarTVC", bundle: nil), forCellReuseIdentifier: "day")
+   
     
     
     override func viewDidLoad() {
@@ -36,7 +35,7 @@ class AveragePerWeekVC: UIViewController {
 
 extension AveragePerWeekVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        100
+        115
     }
     
 }
@@ -47,31 +46,37 @@ extension AveragePerWeekVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let maxIndex = individualMetric.valueForProgressView.indices.max(by: { individualMetric.valueForProgressView[$0] < individualMetric.valueForProgressView[$1] })
+        
+        let minIndex = individualMetric.valueForProgressView.indices.min(by: { individualMetric.valueForProgressView[$0] < individualMetric.valueForProgressView[$1] })
+        
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "dayBarTVC") as? dayBarTVC else {
             fatalError("Cell is not dequed correctly")
         }
         
-        var valuesPerWeekDay: [Int] = individualMetric.valuesPerWeekday
-        var comparedToMaximum = individualMetric.comparedToMaximum
+        let isMax = indexPath.row == maxIndex
+        let isMin = indexPath.row == minIndex
+        
+        
+        
+        
         
         
         cell.weekDay.text = weekDays[indexPath.row]
-        cell.writtenValue.text = "Value: \(valuesPerWeekDay) | Compared to maximum: \(comparedToMaximum)"
+         cell.progressView.progress = individualMetric.valueForProgressView[indexPath.row]
+        cell.writtenValue.text = "\(individualMetric.unitName): \(individualMetric.valuesPerWeekday[indexPath.row]) | Compared to maximum: \(individualMetric.comparedToMaximumString[indexPath.row])"
         
-        if cell.weekDay.text == "Monday" {
-            cell.progressView.progress = 0.5
-            //Se actualiza de igual manera el
-            //cell.writtenValue = el primer valor del array que vaya a crear
+        
+        
+        if individualMetric.exposingName == "Resting Heart Rate" {
+            cell.configureProgressColorInverse(isMax: isMax, isMin: isMin)
         }
-        if cell.weekDay.text == "Tuesday" {
-            cell.progressView.progress = 0.2
+        else {
+            cell.configureProgressColor(isMax: isMax, isMin: isMin)
         }
-        if cell.weekDay.text == "Wednesday" {
-            cell.progressView.progress = 1
-        }
-        if cell.weekDay.text == "Thursday" {
-            cell.progressView.progress = 0.3
-        }
+        
         
         
         return cell
