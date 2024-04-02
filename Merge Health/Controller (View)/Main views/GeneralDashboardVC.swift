@@ -16,6 +16,7 @@ class GeneralDashboardVC: UIViewController {
     @IBOutlet var deepSleep: UIButton!
     @IBOutlet var REMSleepButton: UIButton!
     
+    @IBOutlet var lightSleepButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,7 @@ class GeneralDashboardVC: UIViewController {
         distanceRunningWalking.tintColor = UIColor(hex: "161A30")
         deepSleep.tintColor = UIColor(hex: "161A30")
         REMSleepButton.tintColor = UIColor(hex: "161A30")
+        lightSleepButton.tintColor = UIColor(hex: "161A30")
     }
     
     @IBAction func restingHeartRate(_ sender: Any) {

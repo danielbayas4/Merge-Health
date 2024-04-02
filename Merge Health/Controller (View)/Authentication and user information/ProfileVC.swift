@@ -7,6 +7,8 @@ class ProfileVC: UIViewController {
     
     let healthStore = HKHealthStore()
     
+    @IBOutlet var profilePicture: UIImageView!
+    
     @IBOutlet var nameLabel: UILabel!
     
     @IBOutlet var toPersonalDetailsButton: UIButton!
@@ -21,6 +23,8 @@ class ProfileVC: UIViewController {
     
     func initialUI(){
         view.backgroundColor = UIColor(hex: "F0ECE5")
+        
+        profilePicture.tintColor = UIColor(hex: "161A30")
         
         toPersonalDetailsButton.layer.borderWidth = 1
         toPersonalDetailsButton.layer.borderColor = UIColor.black.cgColor
@@ -70,7 +74,7 @@ class ProfileVC: UIViewController {
                                 if let userID = Auth.auth().currentUser?.uid {
                                     let db = Firestore.firestore()
                                     let userDocument = db.collection("users").document(userID)
-                                    userDocument.updateData(["connection_to_healthkit": true]) { error in
+                                    userDocument.updateData(["healthKitConnection": true]) { error in
                                         if let error = error {
                                             print("Error updating the document")
                                         } else  {

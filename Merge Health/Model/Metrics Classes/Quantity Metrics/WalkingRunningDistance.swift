@@ -18,17 +18,13 @@ class WalkingRunningDistance: QuantityMetric {
     }
     
     override func fetchAllData() {
+        super.fetchAllData()
         
-        self.fetchAverageLastDays { _ in
-            
-        }
+
         self.fetchExpectedTotalValueUntilNow { _ in
             
         }
-        
-        self.fetchLastValue { _ in
-            
-        }
+
         
         self.fetchSumUntilNow { _ in
             
@@ -69,7 +65,12 @@ class WalkingRunningDistance: QuantityMetric {
         healthStore.execute(query)
     }
     
-    override func fetchLastValue(completion: @escaping (String) -> Void) {
+    override func fetchLastValueActivation() {
+        self.fetchLastValueSpecific { lastValue in
+            
+        }
+    }
+    func fetchLastValueSpecific(completion: @escaping (String) -> Void) {
         guard HKHealthStore.isHealthDataAvailable() else {
             self.latest_value = "Health data not available"
             completion("Health data not available")
@@ -91,12 +92,12 @@ class WalkingRunningDistance: QuantityMetric {
                 return
             }
 
-            // Extract the quantity from the last sample and convert it to kilometers and meters
+
             let lastQuantity = lastSample.quantity.doubleValue(for: HKUnit.meter())
             let kilometers = lastQuantity / 1000
             let meters = lastQuantity.truncatingRemainder(dividingBy: 1000)
 
-            // Extract the end date's hour and minute
+ 
             let endDate = lastSample.endDate
             let formatter = DateFormatter()
             formatter.dateFormat = "HH:mm"
@@ -109,7 +110,13 @@ class WalkingRunningDistance: QuantityMetric {
         self.healthStore.execute(query)
     }
     
-    override func fetchAverageLastDays(completion: @escaping (String) -> Void) {
+    
+    override func fetchAverageLastDaysActivation() {
+        self.fetchAverageLastDaysSpecific { averageLastDays in
+            
+        }
+    }
+    func fetchAverageLastDaysSpecific(completion: @escaping (String) -> Void) {
         guard let distanceType = HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning) else {
             print("Distance Walking/Running Type is not available in HealthKit")
             return
@@ -164,6 +171,11 @@ class WalkingRunningDistance: QuantityMetric {
         
         healthStore.execute(query)
     }
+    
+    
+    
+    
+    
     
     override func fetchExpectedTotalValueUntilNow(completion: @escaping (String) -> Void) {
         guard HKHealthStore.isHealthDataAvailable() else {
@@ -261,5 +273,9 @@ class WalkingRunningDistance: QuantityMetric {
 
     override func barChartMonths() {
         //fatalError("Implementation needed")
+    }
+    
+    override func barChartYears() {
+        
     }
 }

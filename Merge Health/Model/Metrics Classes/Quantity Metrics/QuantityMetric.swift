@@ -53,11 +53,6 @@ class QuantityMetric: QuantityMetricProtocol {
     
     public var customValues: [Int]
     
-    
-    
-
-    
-    
     init() {
         //TODAY VIEW
         self.average_last_days = "N/A"
@@ -87,17 +82,10 @@ class QuantityMetric: QuantityMetricProtocol {
     
     
     func fetchAllData() -> Void {
-        self.fetchLastValue { _ in
-            
-        }
+        self.fetchAverageTodayActivation()
+        self.fetchLastValueActivation()
+        self.fetchAverageLastDaysActivation()
         
-        self.fetchAverageToday { _ in
-            
-        }
-        
-        self.fetchAverageLastDays { _ in
-            
-        }
         
         self.fetchDays { _, _, _ in
             
@@ -126,14 +114,149 @@ class QuantityMetric: QuantityMetricProtocol {
     }
     
     
-    func fetchAverageToday(completion: @escaping (String) -> Void) {
-        fatalError("The method must be overriden")
+    //This is a more efficient way of executing the fetching functions
+    func fetchAverageTodayGeneral(individualMetric: QuantityMetric, typeIdentifier: HKQuantityTypeIdentifier, unit: HKUnit, printUnit: String, completion: @escaping (String) -> Void) {
+        
+        guard HKHealthStore.isHealthDataAvailable() else {
+            print("Health data not available")
+            return
+        }
+        
+        let type = HKQuantityType.quantityType(forIdentifier: typeIdentifier)!
+        let now = Date.now
+        let startOfDay = Calendar.current.startOfDay(for: .now)
+        let predicate = HKQuery.predicateForSamples(withStart: startOfDay, end: now, options: .strictStartDate)
+        
+        
+        let query = HKStatisticsQuery(quantityType: type, quantitySamplePredicate: predicate, options: .discreteAverage) { _, result, _ in
+            
+            guard let result = result, let avgQuantity = result.averageQuantity() else {
+                DispatchQueue.main.async {
+                    individualMetric.today_average = "N/A"
+                    
+                    completion("N/A")
+                }
+                return
+            }
+            
+            let average = avgQuantity.doubleValue(for: unit)
+            
+            DispatchQueue.main.async {
+                individualMetric.today_average = "\(String(format: "%.2f", average)) \(printUnit)"
+                completion("\(String(format: "%.2f", average)) \(printUnit)")
+            }
+        }
+        
+        
+        healthStore.execute(query)
     }
-    func fetchLastValue(completion: @escaping (String) -> Void){
-        fatalError("The method must be overriden")
+    
+    func fetchAverageTodayActivation(){
+        //This just exist to have consistency with all the sub-classes
     }
-    func fetchAverageLastDays(completion: @escaping (String) -> Void) {
-        fatalError("The method must be overriden")
+    
+    func fetchLastValueGeneral(individualMetric: QuantityMetric, typeIdentifier: HKQuantityTypeIdentifier, unit: HKUnit, printUnit: String, completion: @escaping (String) -> Void) {
+        
+        guard HKHealthStore.isHealthDataAvailable() else {
+            print("Health data not available")
+            return
+        }
+        
+        let metric = HKQuantityType.quantityType(forIdentifier: typeIdentifier)!
+        let now = Date.now
+        let startDay = Calendar.current.startOfDay(for: .now)
+        let predicate = HKQuery.predicateForSamples(withStart: startDay, end: now, options: .strictEndDate)
+        
+        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
+        
+        let query = HKSampleQuery(sampleType: metric, predicate: predicate, limit: 1, sortDescriptors: [sortDescriptor]) { (query, results, error) in
+            guard error == nil else {
+                completion("N/A")
+                print("Error fetching resting heart rate: \(String(describing: error))")
+                return
+            }
+            
+            if let lastResult = results?.first as? HKQuantitySample {
+                let lastValue = lastResult.quantity.doubleValue(for: unit)
+                DispatchQueue.main.async {
+                    self.latest_value = "\(String(format: "%.2f", lastValue)) \(printUnit)"
+                    completion("\(String(format: "%.2f", lastValue)) \(printUnit)")
+                }
+                
+            }
+        }
+        
+        healthStore.execute(query)
+    }
+    
+    func fetchLastValueActivation() {
+        
+    }
+    
+    
+    func fetchAverageLastDaysGeneral(individualMetric: QuantityMetric, typeIdentifier: HKQuantityTypeIdentifier, unit: HKUnit, printUnit: String, completion: @escaping (String) -> Void){
+        
+        guard let type = HKQuantityType.quantityType(forIdentifier: typeIdentifier) else {
+            print("\(self.exposingName) is not available in HealthKit")
+            return
+        }
+
+        let daysLength = -25
+
+        let calendar = Calendar.current
+        let endDate = Date()
+        guard let startDate = calendar.date(byAdding: .day, value: daysLength, to: endDate) else { return }
+
+
+        let statisticsOptions = HKStatisticsOptions.discreteAverage
+
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictStartDate)
+
+        let query = HKStatisticsCollectionQuery(
+            quantityType: type,
+            quantitySamplePredicate: predicate,
+            options: statisticsOptions,
+            anchorDate: startDate,
+            intervalComponents: DateComponents(day: 1)
+        )
+
+        query.initialResultsHandler = { query, results, error in
+            if error != nil {
+                completion("There was an error with the fetching")
+                return
+            }
+
+            guard let statsCollection = results else {
+                DispatchQueue.main.async {
+                    self.average_last_days = "N/A"
+                    completion("N/A")
+                }
+                return
+            }
+
+            var dailyAverages: [Double] = []
+
+
+            statsCollection.enumerateStatistics(from: startDate, to: endDate) { individualDay, stop in
+                if let quantity = individualDay.averageQuantity() {
+                    let value = quantity.doubleValue(for: unit)
+                    dailyAverages.append(value)
+                }
+            }
+
+            let overallAverage = dailyAverages.isEmpty ? 0 : dailyAverages.reduce(0, +) / Double(dailyAverages.count)
+
+            DispatchQueue.main.async {
+                self.average_last_days = String(format: "%.2f \(printUnit)", overallAverage)
+                completion(String(format: "%.2f \(printUnit)", overallAverage))
+            }
+        }
+
+        healthStore.execute(query)
+    }
+    
+    func fetchAverageLastDaysActivation(){
+        
     }
 
     func fetchExpectedTotalValueUntilNow(completion: @escaping (String) -> Void) {

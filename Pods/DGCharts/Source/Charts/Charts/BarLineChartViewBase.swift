@@ -354,9 +354,15 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
             legendRenderer.computeLegend(data: data)
         }
         
+       
         calculateOffsets()
         
-        setNeedsDisplay()
+        //📌aqui cambie algoooooo
+        DispatchQueue.main.async {
+            self.setNeedsDisplay()
+        }
+
+        
     }
     
     internal override func calcMinMax()

@@ -18,22 +18,11 @@ class Steps: QuantityMetric {
     }
     
     override func fetchAllData() {
+        super.fetchAllData()
         
         self.fetchExpectedTotalValueUntilNow { _ in
             
         }
-        
-        self.fetchLastValue { _ in
-            
-        }
-        
-        
-        
-        self.fetchAverageLastDays { _ in
-            
-            
-        }
-
         
         self.fetchSumUntilNow { _ in
             
@@ -79,40 +68,78 @@ class Steps: QuantityMetric {
     }
     
     
-    
-    
-    override func fetchLastValue(completion: @escaping (String) -> Void) {
-        guard HKHealthStore.isHealthDataAvailable() else {
-            self.latest_value = "Health data not available"
-            completion("Health data not available")
-            return
+    override func fetchLastValueActivation() {
+        super.fetchLastValueGeneral(individualMetric: self, typeIdentifier: .stepCount, unit: HKUnit.count(), printUnit: "steps") { lastValue in
         }
-
-        guard let stepCountType = HKQuantityType.quantityType(forIdentifier: .stepCount) else {
-            completion("Step Count type is unavailable")
-            self.latest_value = "Step Count type is unavailable"
-            return
-        }
-        
-        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)
-        
-        let query = HKSampleQuery(sampleType: stepCountType, predicate: nil, limit: 1, sortDescriptors: [sortDescriptor]) { (query, results, error) in
-                        guard error == nil, let lastSample = results?.first as? HKQuantitySample else {
-                            self.latest_value = "Query failed or no data returned"
-                            completion("Query failed or no data returned")
-                            return
-                        }
-
-                        // Extract the quantity from the last sample and convert it to a string
-                        let lastQuantity = lastSample.quantity.doubleValue(for: HKUnit.count())
-                        self.latest_value = "\(Int(lastQuantity)) steps"
-                        completion("\(Int(lastQuantity)) steps")
-                    }
-        
-        
-        self.healthStore.execute(query)
-        
     }
+    
+    override func fetchAverageLastDaysActivation() {
+        self.fetchAverageLastDaysSpecific { averageValue in
+            
+        }
+    }
+    
+    //Forecast of how many steps at the end of the day (based on the last 10 days)
+    func fetchAverageLastDaysSpecific(completion: @escaping (String) -> Void) {
+        guard let stepCountType = HKQuantityType.quantityType(forIdentifier: .stepCount) else {
+            print("Step Count Type is not available in HealthKit")
+            return
+        }
+        
+        let daysLength = -25
+        
+        let calendar = Calendar.current
+        let endDate = Date()
+        guard let startDate = calendar.date(byAdding: .day, value: daysLength, to: endDate) else { return }
+        
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictStartDate)
+        
+        let query = HKStatisticsCollectionQuery(
+            quantityType: stepCountType,
+            quantitySamplePredicate: predicate,
+            options: .cumulativeSum,
+            anchorDate: startDate,
+            intervalComponents: DateComponents(day: 1)
+        )
+        
+        query.initialResultsHandler = { _, results, error in
+            if error != nil {
+                completion("N/A")
+                return
+            }
+            
+            guard let statsCollection = results else {
+                self.average_last_days = "N/A"
+                completion("N/A")
+                return
+            }
+            
+            var dailySums: [Double] = []
+            var parallelDates: [Date] = []
+            
+            statsCollection.enumerateStatistics(from: startDate, to: endDate) { individual_day, _ in
+                if let quantity = individual_day.sumQuantity() {
+                    let date = individual_day.startDate
+                    let steps = quantity.doubleValue(for: HKUnit.count())
+                    dailySums.append(steps)
+                    parallelDates.append(date)
+                    
+                }
+            }
+            
+            
+            let totalSum = dailySums.reduce(0, +)
+            let averageSteps = totalSum / Double(dailySums.count)
+            
+            DispatchQueue.main.async {
+                self.average_last_days = "\(Int(averageSteps)) steps"
+                completion("\(Int(averageSteps)) steps")
+            }
+        }
+        
+        healthStore.execute(query)
+    }
+    
     
     
     
@@ -182,79 +209,121 @@ class Steps: QuantityMetric {
 }
     
     
-    //Forecast of how many steps at the end of the day (based on the last 10 days)
-    override func fetchAverageLastDays(completion: @escaping (String) -> Void) {
-        guard let stepCountType = HKQuantityType.quantityType(forIdentifier: .stepCount) else {
-            print("Step Count Type is not available in HealthKit")
-            return
-        }
-        
-        let daysLength = -20
-        
-        let calendar = Calendar.current
-        let endDate = Date()
-        guard let startDate = calendar.date(byAdding: .day, value: daysLength, to: endDate) else { return }
-        
-        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictStartDate)
-        
-        let query = HKStatisticsCollectionQuery(
-            quantityType: stepCountType,
-            quantitySamplePredicate: predicate,
-            options: .cumulativeSum,
-            anchorDate: startDate,
-            intervalComponents: DateComponents(day: 1)
-        )
-        
-        query.initialResultsHandler = { _, results, error in
-            if error != nil {
-                completion("N/A")
+    override func fetchDays(completion: @escaping ([Int], [String], String) -> Void) {
+            guard let stepType = HKQuantityType.quantityType(forIdentifier: .stepCount) else {
+                print("Step Count type is not available in HealthKit")
                 return
             }
-            
-            guard let statsCollection = results else {
-                self.average_last_days = "N/A"
-                completion("N/A")
+
+            let daysLength = -25
+
+            var dayXLabels: [String] = []
+            var stepsValues: [Int] = []
+
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MM/dd/yy"
+
+            guard HKHealthStore.isHealthDataAvailable() else {
+                print("Health data not available")
                 return
             }
-            
-            var dailySums: [Double] = []
-            var parallelDates: [Date] = []
-            
-            statsCollection.enumerateStatistics(from: startDate, to: endDate) { individual_day, _ in
-                if let quantity = individual_day.sumQuantity() {
-                    let date = individual_day.startDate
-                    let steps = quantity.doubleValue(for: HKUnit.count())
-                    dailySums.append(steps)
-                    parallelDates.append(date)
-                    
+
+            let calendar = Calendar.current
+            let endDate = Date()
+            guard let startDate = calendar.date(byAdding: .day, value: daysLength, to: endDate) else { return }
+
+            let statisticsOptions = HKStatisticsOptions.cumulativeSum
+
+            let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictStartDate)
+
+            let query = HKStatisticsCollectionQuery(
+                quantityType: stepType,
+                quantitySamplePredicate: predicate,
+                options: statisticsOptions,
+                anchorDate: startDate,
+                intervalComponents: DateComponents(day: 1)
+            )
+
+            query.initialResultsHandler = { query, results, error in
+                if error != nil {
+                    completion([], [], "There was an error trying to fetch the data")
+                    return
+                }
+
+                guard let statsCollection = results else {
+                    completion([], [], "N/A")
+                    return
+                }
+
+                statsCollection.enumerateStatistics(from: startDate, to: endDate) { statistic, stop in
+                    if let quantity = statistic.sumQuantity() {
+                        let date = statistic.startDate
+                        let value = quantity.doubleValue(for: HKUnit.count())
+                        stepsValues.append(Int(value))
+
+                        let dateString = dateFormatter.string(from: date)
+                        dayXLabels.append(dateString)
+                    }
                 }
             }
-            
-            
-            let totalSum = dailySums.reduce(0, +)
-            let averageSteps = totalSum / Double(dailySums.count)
-            
+
+            healthStore.execute(query)
+        }
+
+    override func barChartDays() {
+        let chartView = BarChartView()
+
+        var xLabels: [String] = []
+        var values: [Int] = []
+
+        fetchDays { values_, dates, error in
+            xLabels = dates
+            values = values_
+
+            let dataSetLabel = "Steps"
+
+            var dataEntries: [BarChartDataEntry] = []
+
+            for i in 0..<values.count {
+                let dataEntry = BarChartDataEntry(x: Double(i), y: Double(values[i]))
+                dataEntries.append(dataEntry)
+            }
+
+            let chartDataSet = BarChartDataSet(entries: dataEntries, label: dataSetLabel)
+
+            let colors: [UIColor] = values.map { value in
+                switch value {
+                case 0..<3000:
+                    return UIColor.red
+                case 3000..<7000:
+                    return UIColor.orange
+                case 7000..<10000:
+                    return UIColor.yellow
+                default:
+                    return UIColor.green
+                }
+            }
+
+            chartDataSet.colors = colors
+
+            let chartData = BarChartData(dataSet: chartDataSet)
+
+            chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: xLabels)
+            chartView.data = chartData
+            chartView.xAxis.labelCount = xLabels.count
+
             DispatchQueue.main.async {
-                self.average_last_days = "\(Int(averageSteps)) steps"
-                completion("\(Int(averageSteps)) steps")
+                self.dailyBarChart = chartView
             }
         }
-        
-        healthStore.execute(query)
     }
     
     
     
-    override func fetchDays(completion: @escaping ([Int], [String], String) -> Void) {
-        
-    }
-
     
-    override func fetchWeeks(completion: @escaping ([Int], [String], String) -> Void){
-        let number_weeks: Int = 10
-        let weekValues = [1]
-    }
-
+    
+    
+    
 
 
     override func fetchMonths(completion: @escaping ([Int], [String], String) -> Void) {
@@ -269,18 +338,14 @@ class Steps: QuantityMetric {
     
 
     
-    override func barChartDays(){
 
-        //fatalError("Implementation needed")
-    }
-    
-    override func barChartWeeks(){
-        
-        //fatalError("Implementation needed")
-    }
-    
+
     override func barChartMonths(){
         
         //fatalError("Implementation needed")
+    }
+    
+    override func barChartYears() {
+        
     }
 }

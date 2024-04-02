@@ -37,7 +37,6 @@
 		78BCF9DA2B7658D000D1DEC6 /* CoreDataConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCF9D92B7658D000D1DEC6 /* CoreDataConnection.swift */; };
 		78BCF9DE2B7E885900D1DEC6 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCF9DD2B7E885900D1DEC6 /* ForgotPasswordVC.swift */; };
 		78C5C3262BB9D87B0001EA76 /* BarChartViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C5C3252BB9D87B0001EA76 /* BarChartViewExtension.swift */; };
-		78C5C3282BBB20090001EA76 /* QuantityMetricMultipleFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C5C3272BBB20090001EA76 /* QuantityMetricMultipleFields.swift */; };
 		78D6C1052BB0645D004C3C4D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 78D6C1042BB0645D004C3C4D /* GoogleService-Info.plist */; };
 		78DCA8EE2B8E4D9100F39227 /* RestingHeartRateM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DCA8ED2B8E4D9100F39227 /* RestingHeartRateM.swift */; };
 		78DD431E2B67048C0067EB4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DD431D2B67048C0067EB4B /* AppDelegate.swift */; };
@@ -112,7 +111,6 @@
 		78BCF9D92B7658D000D1DEC6 /* CoreDataConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataConnection.swift; sourceTree = "<group>"; };
 		78BCF9DD2B7E885900D1DEC6 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		78C5C3252BB9D87B0001EA76 /* BarChartViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartViewExtension.swift; sourceTree = "<group>"; };
-		78C5C3272BBB20090001EA76 /* QuantityMetricMultipleFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityMetricMultipleFields.swift; sourceTree = "<group>"; };
 		78D6C1042BB0645D004C3C4D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		78DCA8ED2B8E4D9100F39227 /* RestingHeartRateM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestingHeartRateM.swift; sourceTree = "<group>"; };
 		78DD431A2B67048C0067EB4B /* Merge Health.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Merge Health.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -209,7 +207,6 @@
 				78BC96DD2BB3024D005CB452 /* Steps.swift */,
 				7870BB9B2BB4ACBF007DF581 /* WalkingRunningDistance.swift */,
 				78BC96DF2BB3025C005CB452 /* WorkoutTime.swift */,
-				78C5C3272BBB20090001EA76 /* QuantityMetricMultipleFields.swift */,
 			);
 			path = "Quantity Metrics";
 			sourceTree = "<group>";
@@ -677,7 +674,6 @@
 				78BCF9DE2B7E885900D1DEC6 /* ForgotPasswordVC.swift in Sources */,
 				78EB59162B93E12E007272DA /* UIColor+Extensions.swift in Sources */,
 				78EE8EEB2B7648C000DC8B84 /* CorrelationVC.swift in Sources */,
-				78C5C3282BBB20090001EA76 /* QuantityMetricMultipleFields.swift in Sources */,
 				7864BD192BAB5E10005D48CB /* IndividualMetricVC.swift in Sources */,
 				78DD43522B670A2D0067EB4B /* health_data.xcdatamodeld in Sources */,
 				78BC96DE2BB3024D005CB452 /* Steps.swift in Sources */,

@@ -20,12 +20,15 @@ class TodayVC: UIViewController {
          self.tableView.reloadData()
          
          for quantityMetric in quantityMetrics {
-             quantityMetric.fetchAllData()
+             //quantityMetric.fetchAllData()
              tableView.register(UINib(nibName: quantityMetric.todayTVC_Name, bundle: nil), forCellReuseIdentifier: quantityMetric.todayTVC_Name)
+             quantityMetric.fetchAllData()
          }
          
          self.navigationItem.rightBarButtonItem = self.editButtonItem
      }
+    
+    
     
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
@@ -35,20 +38,12 @@ class TodayVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        for quantityMetric in quantityMetrics {
-            quantityMetric.fetchAllData()
-        }
-        
         self.tableView.reloadData()
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        for quantityMetric in quantityMetrics {
-            quantityMetric.fetchAllData()
-        }
         
         self.tableView.reloadData()
     }

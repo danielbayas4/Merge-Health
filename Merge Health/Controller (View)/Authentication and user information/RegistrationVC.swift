@@ -18,8 +18,8 @@ class RegistrationVC: UIViewController, UITextFieldDelegate {
     @IBOutlet var passwordTextField: UITextField!
     
     @IBOutlet var repeatPasswordTextfield: UITextField!
-
     
+    @IBOutlet var ageTextField: UITextField!
     
     
     override func viewDidLoad() {
@@ -34,9 +34,13 @@ class RegistrationVC: UIViewController, UITextFieldDelegate {
         
         nameTextField.delegate = self
         emailTextField.delegate = self
+        
+        
         repeatEmailTextField.delegate = self
         passwordTextField.delegate = self
         repeatPasswordTextfield.delegate = self
+        
+        
         
     }
     
@@ -45,7 +49,7 @@ class RegistrationVC: UIViewController, UITextFieldDelegate {
     @IBAction func registerAction(_ sender: Any) {
         
         //Optional chaining
-        if let email = emailTextField.text, let password = passwordTextField.text, let name = nameTextField.text {
+        if let email = emailTextField.text, let password = passwordTextField.text, let name = nameTextField.text, let ageText = ageTextField.text, let intAge = Int(ageText) {
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                 
                 //authResult is the user data
@@ -54,12 +58,27 @@ class RegistrationVC: UIViewController, UITextFieldDelegate {
                 
                 if let e = error {
                     print(e.localizedDescription)
-                    //Pop up to show the user the error
+
                 } else {
+                    
+                    
+                    
                     if let userID = authResult?.user.uid {
+                        let appPreferences: [String: Any] = [
+                                    "notificationsEnabled": true,
+                                    "theme": "normal",
+                                    "fontSize": 12,
+                                    "PolarAPIConnection": ""
+                                ]
+                        
+                        
                         db.collection("users").document(userID).setData([
                             "name": name,
-                            "email": email
+                            "email": email,
+                            "age": intAge,
+                            "appPreferences": appPreferences,
+                            "healthKitConnection": false,
+                            "polarAPIData": [ ]
                         ]) { error in
                             
                             if let error = error {
@@ -68,7 +87,7 @@ class RegistrationVC: UIViewController, UITextFieldDelegate {
                                 print ("The user name was succesfully written")
                             }
                         }
-                        //Navigation to the main program
+
                         self.performSegue(withIdentifier: "registrationToMain" , sender: self)
                         
                     }
