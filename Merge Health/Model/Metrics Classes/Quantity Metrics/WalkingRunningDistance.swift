@@ -173,7 +173,7 @@ class WalkingRunningDistance: QuantityMetric {
         healthStore.execute(query)
     }
     
-    
+
     override func fetchLastValueActivation() {
         self.fetchLastValueSpecific { lastValue in
             
@@ -891,4 +891,5 @@ class WalkingRunningDistance: QuantityMetric {
             }
         }
     }
+
 }

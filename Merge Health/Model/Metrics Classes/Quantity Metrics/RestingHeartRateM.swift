@@ -14,7 +14,7 @@ class RestingHeartRateM: QuantityMetric {
         super.init()
     }
     
-
+    
     override var todayTVC_Name: String {
         return todayTVC_Names.restingHeartRate
     }
@@ -32,14 +32,13 @@ class RestingHeartRateM: QuantityMetric {
         
     }
     
-    
     override func fetchSpecificWeekDay(pastDays: Int, weekDay: Int, completion: @escaping (Int, String) -> Void) {
         guard HKHealthStore.isHealthDataAvailable() else {
             print("Health data not available")
             return
         }
         
-
+        
         let type = HKQuantityType.quantityType(forIdentifier: .restingHeartRate)!
         let calendar = Calendar.current
         
@@ -55,7 +54,7 @@ class RestingHeartRateM: QuantityMetric {
         let dateComponents = DateComponents(day: 1)
         let statisticsOptions = HKStatisticsOptions.discreteAverage
         
-
+        
         
         let query = HKStatisticsCollectionQuery(
             quantityType: type,
@@ -79,7 +78,7 @@ class RestingHeartRateM: QuantityMetric {
             results?.enumerateStatistics(from: startDate, to: endDate, with: { statistics, _ in
                 let dayComponent = calendar.component(.weekday, from: statistics.startDate)
                 if let quantity = statistics.averageQuantity(), dayComponent == weekDay {
-
+                    
                     let dailyHeartRate = quantity.doubleValue(for: HKUnit(from: "count/min"))
                     totalHeartRate += dailyHeartRate
                     weekDayCount += 1
@@ -87,17 +86,17 @@ class RestingHeartRateM: QuantityMetric {
             })
             
             
-            let averageHeartRate = weekDayCount > 0 ? Int(totalHeartRate) / weekDayCount : 0 
+            let averageHeartRate = weekDayCount > 0 ? Int(totalHeartRate) / weekDayCount : 0
             
-
+            
             completion(averageHeartRate, "Success")
         }
         
         healthStore.execute(query)
     }
-
+    
     override func unifyWeekDays() {
-
+        
         let allWeekDays: [Int] = [2,3,4,5,6,7,1]
         let pastDays = 500
         var averageArray: [Int] = []
@@ -122,17 +121,15 @@ class RestingHeartRateM: QuantityMetric {
             let valuesForProgressView = averageArray.map { Float($0) / Float(maxValue) }
             let averagesString = valuesForProgressView.map { "\(String(format: "%.2f", $0 * 100)) %" }
             
-
+            
             
             self.valuesPerWeekday = averageArray
             self.valueForProgressView = valuesForProgressView
             self.comparedToMaximumString = averagesString
         }
+        
     }
-    
-    
-    
-    
+        
     func simplifiedUnifyWeekDaysForTesting(from averageArray: [Int]) -> (maxValue: Int, valuesForProgressView: [Float], averagesString: [String]) {
         guard let maxValue = averageArray.max(), maxValue > 0 else {
             print("No data available or maximum value is zero.")
@@ -147,17 +144,17 @@ class RestingHeartRateM: QuantityMetric {
         
         return (maxValue, valuesForProgressView, averagesString)
     }
-    
-    
-    
-    
-    
-    
+        
+        
+        
+        
+        
+        
     override func fetchAverageTodayActivation() {
         super.fetchAverageTodayGeneral(individualMetric: self, typeIdentifier: .restingHeartRate, unit: HKUnit(from: "count/min"), printUnit: "BPM") { average in
         }
     }
-    
+        
     override func fetchLastValueActivation() {
         super.fetchLastValueGeneral(individualMetric: self, typeIdentifier: .restingHeartRate, unit: HKUnit(from: "count/min"), printUnit: "BPM") { lastValue in
             
@@ -169,13 +166,11 @@ class RestingHeartRateM: QuantityMetric {
             
         }
     }
-    
-    
-    
-    
-    
-    
-    
+        
+        
+        
+        
+        
     override func fetchDays(completion: @escaping ([Int], [String], String) -> Void) {
         
         guard let heartRateType = HKQuantityType.quantityType(forIdentifier: .restingHeartRate) else {
@@ -241,14 +236,12 @@ class RestingHeartRateM: QuantityMetric {
             }
             
             completion(heartRateValues, dayXLabels, "No error")
-
+            
         }
         
         healthStore.execute(query)
         //
     }
-    
-
     override func fetchCustomDays(userinput: Int, completion: @escaping ([Int], [String], String) -> Void) {
         guard let heartRateType = HKQuantityType.quantityType(forIdentifier: .restingHeartRate) else {
             print("Resting Heart Rate Type is not available in HealthKit")
@@ -272,7 +265,7 @@ class RestingHeartRateM: QuantityMetric {
             return
         }
         
-
+        
         
         let calendar = Calendar.current
         let endDate = Date()
@@ -315,16 +308,13 @@ class RestingHeartRateM: QuantityMetric {
                     dayXLabels.append(dateString)
                 }
             }
-
+            
             completion(heartRateValues, dayXLabels, "No error")
-
+            
         }
         
         healthStore.execute(query)
     }
-    
-
-    
     override func fetchWeeks(completion: @escaping ([Int], [String], String) -> Void) {
         guard let heartRateType = HKQuantityType.quantityType(forIdentifier: .restingHeartRate) else {
             print("Resting Heart Rate Type is not available in HealthKit")
@@ -390,9 +380,6 @@ class RestingHeartRateM: QuantityMetric {
         
         healthStore.execute(query)
     }
-
-
-
     override func fetchMonths(completion: @escaping ([Int], [String], String) -> Void) {
         guard let heartRateType = HKQuantityType.quantityType(forIdentifier: .restingHeartRate) else {
             print("Resting Heart Rate Type is not available in HealthKit")
@@ -455,14 +442,13 @@ class RestingHeartRateM: QuantityMetric {
         
         healthStore.execute(query)
     }
-    
     override func fetchYears(completion: @escaping ([Int], [String], String) -> Void) {
         guard let heartRateType = HKQuantityType.quantityType(forIdentifier: .restingHeartRate) else {
             print("Resting Heart Rate Type is not available in HealthKit")
             return
         }
         
-
+        
         let yearsLength = -25
         
         var yearXLabels: [String] = []
@@ -518,15 +504,15 @@ class RestingHeartRateM: QuantityMetric {
         
         healthStore.execute(query)
     }
-
-    
-    
-    
-    
-    
-    
-    //Creation of the chart objects
-
+        
+        
+        
+        
+        
+        
+        
+        //Creation of the chart objects
+        
     override func barChartDays() {
         let chartView = BarChartView()
         
@@ -541,8 +527,8 @@ class RestingHeartRateM: QuantityMetric {
             
             var dataEntries: [BarChartDataEntry] = []
             
-        
-
+            
+            
             for i in 0..<values.count {
                 let dataEntry = BarChartDataEntry(x: Double(i), y: Double(values[i]))
                 dataEntries.append(dataEntry)
@@ -554,10 +540,10 @@ class RestingHeartRateM: QuantityMetric {
                 switch value {
                 case 0..<45:
                     return UIColor.blue
-                
+                    
                 case 45..<57:
                     return UIColor.green
-                
+                    
                 default:
                     return UIColor.red
                 }
@@ -577,7 +563,7 @@ class RestingHeartRateM: QuantityMetric {
             
         }
     }
-    
+        
     override func barChartCustomDays(userinput: Int) {
         let chartView = BarChartView()
         
@@ -592,8 +578,8 @@ class RestingHeartRateM: QuantityMetric {
             
             var dataEntries: [BarChartDataEntry] = []
             
-        
-
+            
+            
             for i in 0..<values.count {
                 let dataEntry = BarChartDataEntry(x: Double(i), y: Double(values[i]))
                 dataEntries.append(dataEntry)
@@ -605,10 +591,10 @@ class RestingHeartRateM: QuantityMetric {
                 switch value {
                 case 0..<45:
                     return UIColor.blue
-                
+                    
                 case 45..<57:
                     return UIColor.green
-                
+                    
                 default:
                     return UIColor.red
                 }
@@ -631,9 +617,9 @@ class RestingHeartRateM: QuantityMetric {
             
         }
     }
-    
-
-
+        
+        
+        
     override func barChartWeeks() {
         let chartView = BarChartView()
         
@@ -659,10 +645,10 @@ class RestingHeartRateM: QuantityMetric {
                 switch value {
                 case 0..<45:
                     return UIColor.blue
-                
+                    
                 case 45..<57:
                     return UIColor.green
-                
+                    
                 default:
                     return UIColor.red
                 }
@@ -681,77 +667,77 @@ class RestingHeartRateM: QuantityMetric {
             }
         }
     }
-
+        
     override func barChartMonths() {
         let chartView = BarChartView()
-
+        
         var xLabels: [String] = []
         var values: [Int] = []
-
+        
         fetchMonths { values_, dates, error in
             xLabels = dates
             values = values_
-
+            
             let dataSetLabel = "Beats per minute"
-
+            
             var dataEntries: [BarChartDataEntry] = []
-
+            
             for i in 0..<values.count {
                 let dataEntry = BarChartDataEntry(x: Double(i), y: Double(values[i]))
                 dataEntries.append(dataEntry)
             }
-
+            
             let chartDataSet = BarChartDataSet(entries: dataEntries, label: dataSetLabel)
-
+            
             let colors: [UIColor] = values.map { value in
                 switch value {
                 case 0..<45:
                     return UIColor.blue
-
+                    
                 case 45..<57:
                     return UIColor.green
-
+                    
                 default:
                     return UIColor.red
                 }
             }
-
+            
             chartDataSet.colors = colors
-
+            
             let chartData = BarChartData(dataSet: chartDataSet)
             
             
             chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: xLabels)
             chartView.data = chartData
             chartView.xAxis.labelCount = xLabels.count
-
+            
             DispatchQueue.main.async {
                 self.monthlyBarChart = chartView
             }
         }
     }
-    
+        
     override func barChartYears() {
         let chartView = BarChartView()
-
+        
         var xLabels: [String] = []
         var values: [Int] = []
         
         fetchYears { values_, dates, error in
             xLabels = dates
             values = values_
-
+            
             let dataSetLabel = "Beats per minute"
-
+            
             var dataEntries: [BarChartDataEntry] = []
-
+            
             for i in 0..<values.count {
                 let dataEntry = BarChartDataEntry(x: Double(i), y: Double(values[i]))
                 dataEntries.append(dataEntry)
             }
-
+            
             let chartDataSet = BarChartDataSet(entries: dataEntries, label: dataSetLabel)
-
+            
             
             let colors: [UIColor] = values.map { value in
                 switch value {
@@ -765,19 +751,20 @@ class RestingHeartRateM: QuantityMetric {
             }
             
             chartDataSet.colors = colors
-
+            
             let chartData = BarChartData(dataSet: chartDataSet)
-
+            
             chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: xLabels)
             chartView.data = chartData
             chartView.xAxis.labelCount = xLabels.count
-
+            
             DispatchQueue.main.async {
                 self.yearsBarChart = chartView
             }
         }
     }
-}
-
-
+    
+    }
+    
+    
 

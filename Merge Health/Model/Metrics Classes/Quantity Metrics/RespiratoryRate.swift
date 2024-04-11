@@ -41,6 +41,8 @@ class RespiratoryRate: QuantityMetric {
         super.fetchAverageLastDaysGeneral(individualMetric: self, typeIdentifier: .respiratoryRate, unit: HKUnit(from: "count/min"), printUnit: "breaths/min") { averageLastDays in
             
         }
+
+        
     }
     
     override func fetchSpecificWeekDay(pastDays: Int, weekDay: Int, completion: @escaping (Int, String) -> Void) {
@@ -131,10 +133,6 @@ class RespiratoryRate: QuantityMetric {
             self.comparedToMaximumString = averagesString
         }
     }
-    
-    
-    
-
     
     
     override func fetchDays(completion: @escaping ([Int], [String], String) -> Void) {

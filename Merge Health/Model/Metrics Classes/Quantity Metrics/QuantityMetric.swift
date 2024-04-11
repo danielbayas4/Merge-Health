@@ -220,6 +220,7 @@ class QuantityMetric: QuantityMetricProtocol {
     }
     
     
+
     func fetchAverageLastDaysGeneral(individualMetric: QuantityMetric, typeIdentifier: HKQuantityTypeIdentifier, unit: HKUnit, printUnit: String, completion: @escaping (String) -> Void){
         
         guard let type = HKQuantityType.quantityType(forIdentifier: typeIdentifier) else {
@@ -255,10 +256,15 @@ class QuantityMetric: QuantityMetricProtocol {
             guard let statsCollection = results else {
                 DispatchQueue.main.async {
                     self.average_last_days = "N/A"
+
                     completion("N/A")
                 }
                 return
             }
+            
+            
+            
+
 
             var dailyAverages: [Double] = []
 
@@ -280,7 +286,12 @@ class QuantityMetric: QuantityMetricProtocol {
 
         healthStore.execute(query)
     }
-    
+
+
+
+
+
+
     func fetchAverageLastDaysActivation(){
         
     }

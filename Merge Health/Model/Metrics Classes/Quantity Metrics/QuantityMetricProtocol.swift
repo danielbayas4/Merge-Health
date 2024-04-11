@@ -9,8 +9,6 @@ import Foundation
 import DGCharts
 
 protocol QuantityMetricProtocol {
-    
-func fetchSpecificWeekDay(pastDays: Int, weekDay: Int, completion: @escaping (Int, String) -> Void)
     func fetchWeeks(completion: @escaping ([Int], [String], String) -> Void)
     func fetchDays(completion: @escaping ([Int], [String], String) -> Void)
     func fetchMonths(completion: @escaping ([Int], [String], String) -> Void)

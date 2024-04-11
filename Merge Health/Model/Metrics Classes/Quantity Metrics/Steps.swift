@@ -315,6 +315,9 @@ class Steps: QuantityMetric {
                 }
         
         healthStore.execute(query)
+
+        
+
     }
     
     override func fetchDays(completion: @escaping ([Int], [String], String) -> Void) {
@@ -544,6 +547,10 @@ class Steps: QuantityMetric {
     }
     
     
+
+
+
+
     override func fetchMonths(completion: @escaping ([Int], [String], String) -> Void) {
             guard let stepType = HKQuantityType.quantityType(forIdentifier: .stepCount) else {
                 print("Step Count Type is not available in HealthKit")
@@ -876,7 +883,6 @@ class Steps: QuantityMetric {
             }
         }
     }
-    
     
     
 }

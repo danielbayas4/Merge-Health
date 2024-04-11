@@ -37,7 +37,6 @@
 		78BC96DE2BB3024D005CB452 /* Steps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BC96DD2BB3024D005CB452 /* Steps.swift */; };
 		78BC96E02BB3025C005CB452 /* WorkoutTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BC96DF2BB3025C005CB452 /* WorkoutTime.swift */; };
 		78BC96E22BB30285005CB452 /* QuantityMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BC96E12BB30285005CB452 /* QuantityMetric.swift */; };
-		78BCF9DA2B7658D000D1DEC6 /* CoreDataConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCF9D92B7658D000D1DEC6 /* CoreDataConnection.swift */; };
 		78BCF9DE2B7E885900D1DEC6 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCF9DD2B7E885900D1DEC6 /* ForgotPasswordVC.swift */; };
 		78C111722BBF455600CB5109 /* UserDataInformationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C111712BBF455600CB5109 /* UserDataInformationTests.swift */; };
 		78C5C3262BB9D87B0001EA76 /* BarChartViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C5C3252BB9D87B0001EA76 /* BarChartViewExtension.swift */; };
@@ -112,7 +111,6 @@
 		78BC96DD2BB3024D005CB452 /* Steps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Steps.swift; sourceTree = "<group>"; };
 		78BC96DF2BB3025C005CB452 /* WorkoutTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTime.swift; sourceTree = "<group>"; };
 		78BC96E12BB30285005CB452 /* QuantityMetric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityMetric.swift; sourceTree = "<group>"; };
-		78BCF9D92B7658D000D1DEC6 /* CoreDataConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataConnection.swift; sourceTree = "<group>"; };
 		78BCF9DD2B7E885900D1DEC6 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		78C111712BBF455600CB5109 /* UserDataInformationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataInformationTests.swift; sourceTree = "<group>"; };
 		78C5C3252BB9D87B0001EA76 /* BarChartViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartViewExtension.swift; sourceTree = "<group>"; };
@@ -382,7 +380,6 @@
 		78EE8EDE2B7580A200DC8B84 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				78BCF9D92B7658D000D1DEC6 /* CoreDataConnection.swift */,
 				78B1F6B92B9BB2D100AA1410 /* UserDataInformation.swift */,
 				78DCA8EC2B8E4D5100F39227 /* Metrics Classes */,
 				7870BB972BB4A910007DF581 /* Constants.swift */,
@@ -670,7 +667,6 @@
 				78DD43202B67048C0067EB4B /* SceneDelegate.swift in Sources */,
 				78DCA8EE2B8E4D9100F39227 /* RestingHeartRateM.swift in Sources */,
 				78EE8EEA2B7648BE00DC8B84 /* GeneralDashboardVC.swift in Sources */,
-				78BCF9DA2B7658D000D1DEC6 /* CoreDataConnection.swift in Sources */,
 				7870BB982BB4A910007DF581 /* Constants.swift in Sources */,
 				78EE8EF12B764DE600DC8B84 /* RegistrationVC.swift in Sources */,
 				78BC96E22BB30285005CB452 /* QuantityMetric.swift in Sources */,

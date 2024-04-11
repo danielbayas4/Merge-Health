@@ -29,9 +29,7 @@ class HeartRateVariability: QuantityMetric {
     }
     
     
-    
-    
-    
+
     override func fetchSpecificWeekDay(pastDays: Int, weekDay: Int, completion: @escaping (Int, String) -> Void) {
         guard HKHealthStore.isHealthDataAvailable() else {
             print("Health data not available")
@@ -86,6 +84,7 @@ class HeartRateVariability: QuantityMetric {
         }
         
         healthStore.execute(query)
+
     }
 
     override func unifyWeekDays() {
@@ -138,7 +137,6 @@ class HeartRateVariability: QuantityMetric {
             
         }
     }
-    
     
     
     override func fetchDays(completion: @escaping ([Int], [String], String) -> Void) {
